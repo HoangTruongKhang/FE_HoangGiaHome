@@ -65,9 +65,9 @@ LIST
 		- get all CustomerServices:		http://localhost:8080/api/v1/customerservices
 		- get CustomerService by id:	http://localhost:8080/api/v1/customerservices/2
 		- get search:					http://localhost:8080/api/v1/customerservices?search=
-		- ADD:							
-		- Update:						
-		- Delete:
+		- ADD:							http://localhost:8080/api/v1/customerservices					
+		- Update:						http://localhost:8080/api/v1/customerservices/1			
+		- Delete:						http://localhost:8080/api/v1/customerservices/delete/6
 		
 	- Contract:
 		- get all Contracts:			http://localhost:8080/api/v1/contracts	
@@ -105,5 +105,4 @@ LIST
 		- get Reply by id:		http://localhost:8080/api/v1/replys/1
 		- get search:			http://localhost:8080/api/v1/replys?search=
 		- Button Phản hồi ở Feedback và lưu vào Reply:http://localhost:8080/api/v1/replys
-		- Delete:				http://localhost:8080/api/v1/replys/delete/4			
-		
+		- Delete:				http://localhost:8080/api/v1/replys/delete/4	
