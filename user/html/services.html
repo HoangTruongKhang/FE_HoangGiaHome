@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <script src="../js/services.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!-- kiểu chữ -->
+    <title>Hoàng Gia Home</title>
+</head>
+
+<body>
+    <!-- Thanh menu -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../images/logo1.png" class="logo-img" alt="Logo">
+        </div>
+
+        <!-- Danh sách menu -->
+        <ul class="menu">
+            <li><a href="home.html">Trang Chủ</a></li>
+            <li class="dropdown">
+                <a href="#services" id="dichvu">Dịch Vụ</a>
+                <div class="dropdown-content">
+                    <a href="booking.html" id="dichvu1">Dịch Vụ Đặt Phòng</a>
+                    <a href="services.html" id="dichvu2">Dịch Vụ Phòng</a>
+                </div>
+            </li>
+            <li><a href="news.html" id="tintuc">Tin Tức</a></li>
+
+        </ul>
+
+        <!-- Mục đăng nhập, đăng ký -->
+        <div class="auth">
+            <a href="login.html">Đăng Nhập</a>
+            <span class="separator">|</span>
+            <a href="register.html">Đăng Ký <i class="fa-solid fa-circle-user"></i></a> <!-- Thêm biểu tượng -->
+
+        </div>
+    </nav>
+
+
+
+
+    <!-- Danh Sách Dịch Vụ -->
+    <section class="additional-services">
+        <h2>Danh Sách Dịch Vụ Phòng</h2>
+        <table class="service-table">
+            <caption>Chi Tiết Dịch Vụ</caption>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã Dịch Vụ</th>
+                    <th>Tên Dịch Vụ</th>
+                    <th>Đơn Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Đơn Vị Tính</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>DV001</td>
+                    <td>Internet</td>
+                    <td>150,000 VND</td>
+                    <td>1</td>
+                    <td>Tháng</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>DV002</td>
+                    <td>Điện</td>
+                    <td>3,500 VND</td>
+                    <td>1</td>
+                    <td>kWh</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>DV003</td>
+                    <td>Nước</td>
+                    <td>15,000 VND</td>
+                    <td>1</td>
+                    <td>m³</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DV004</td>
+                    <td>Gửi xe</td>
+                    <td>150,000 VND</td>
+                    <td>1</td>
+                    <td>Tháng</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>DV005</td>
+                    <td>Rác</td>
+                    <td>10,000 VND</td>
+                    <td>1</td>
+                    <td>Người/ Tháng</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>DV006</td>
+                    <td>Máy Giặt</td>
+                    <td>80,000 VND</td>
+                    <td>1</td>
+                    <td>Tháng</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>DV007</td>
+                    <td>Bảo trì thiết bị</td>
+                    <td>50,000 VND</td>
+                    <td>1</td>
+                    <td>Lượt</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- Đăng ký dịch vụ phòng -->
+    <div class="service-registration">
+        <h2>Đăng ký dịch vụ</h2>
+        <form class="registration-form">
+            <!-- Thông tin cá nhân -->
+
+            <label for="customer-id">Mã khách hàng:</label>
+            <input type="text" id="customer-id" name="customer-id" required>
+
+            <label for="full-name">Họ và tên:</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="internet-service">Dịch vụ Internet:</label>
+            <select id="internet-service" name="internet-service">
+                <option value="0">Không có</option>
+                <option value="1">Có</option>
+            </select>
+
+            <label for="trash-service">Dịch vụ Rác thải:</label>
+            <select id="trash-service" name="trash-service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <label for="washing-machine-service">Dịch vụ Máy Giặt:</label>
+            <select id="washing-machine-service" name="washing-machine-service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <label for="maintenance-service">Dịch vụ Bảo trì thiết bị:</label>
+            <select id="maintenance-service" name="maintenance-service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+
+            <label for="vehicle-service">Dịch vụ Gửi xe:</label>
+            <select id="vehicle-service" name="vehicle-service">
+                <option value="0">0</option>
+                <option value="1">1</option>
+
+            </select>
+
+            <h2>Thông tin về phương tiện:</h2>
+
+            <label for="vehicle-name">Tên xe:</label>
+            <select id="vehicle-name" name="vehicle-name">
+                <option value="motorcycle">Xe máy</option>
+                <option value="electric-motorcycle">Xe máy điện</option>
+                <option value="electric-bike">Xe đạp điện</option>
+                <option value="bicycle">Xe đạp</option>
+            </select>
+
+
+            <label for="vehicle-owner">Tên chủ sở hữu:</label>
+            <input type="text" id="vehicle-owner" name="vehicle-owner" required>
+
+            <label for="vehicle-type">Loại xe:</label>
+            <select id="vehicle-type" name="vehicle-type">
+                <option value="CC_0">0</option>
+                <option value="CC_50">CC_50</option>
+                <option value="CC_110">CC_110</option>
+                <option value="CC_125">CC_125</option>
+                <option value="CC_150">CC_150</option>
+                <option value="CC_160">CC_160</option>
+            </select>
+
+
+            <label for="vehicle-license">Biển số xe:</label>
+            <input type="text" id="vehicle-license" name="vehicle-license" required>
+
+            <label for="ownership">Mối quan hệ với chủ sở hữu:</label>
+            <select id="ownership" name="ownership" required>
+                <option value="owner">Chính chủ</option>
+                <option value="transfer">Sang nhượng</option>
+                <option value="loan">Thuê - mượn</option>
+            </select>
+
+            <label>
+                <input type="checkbox" name="confirm" required>
+                Tôi cam đoan những lời khai về phương tiện là đúng sự thật và chịu trách nhiệm trước pháp luật về cam
+                đoan của mình.
+            </label>
+
+            <button type="submit" class="register-button">Đăng ký</button>
+        </form>
+    </div>
+
+
+
+
+
+
+    <!-- Các chi nhánh của Hoàng Gia Home -->
+    <div class="branches">
+        <h2 class="branches-title">Các chi nhánh của Hoàng Gia Home</h2>
+        <div class="branch-list">
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 322, Đường Mỹ Đình, Hà Nội</p>
+                <p class="branch-phone">Tel: 0123 456 789</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh TP.HCM</strong>
+                <p class="branch-address">Số 456, Đường Y, TP.HCM</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Đà Nẵng</strong>
+                <p class="branch-address">Số 456, Đường Y, Đà Nẵng</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Tiêu đề chính -->
+        <h1 class="footer-title">Hoàng Gia Home - Chạm đến chất lượng, sống an lành</h1>
+
+        <!-- Nội dung footer -->
+        <div class="footer-content">
+            <!-- Phần giới thiệu -->
+            <div class="footer-introduction">
+                <h2>
+                    <span class="highlight-green">Về Chúng Tôi ?</span>
+                </h2>
+                <p>Hoàng Gia Home luôn tự hào là nơi mang đến cho bạn những phòng trọ tiện nghi và hiện đại với mức
+                    giá
+                    hợp
+                    lý. Chúng tôi luôn cam kết đặt chất lượng lên hàng đầu, đảm bảo mang lại sự hài lòng tối đa cho
+                    khách hàng. Hãy đến với Hoàng Gia Home để trải nghiệm không gian sống an lành, tiện nghi, và an
+                    toàn. Chúng tôi luôn nỗ lực vì sự thoải mái và hạnh phúc của bạn.</p>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <p><strong>Trụ sở chính:</strong> 322 Mỹ Đình, Hà Nội</p>
+                <p><strong>Điện thoại:</strong> +84 123 456 789</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@hoanggiahome.com">hoanggiahome.hn@gmail.com</a>
+                </p>
+
+                <!-- Theo dõi trên mạng xã hội -->
+                <h3>Theo Dõi Trên Mạng Xã Hội</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://zalo.me" target="_blank"><i class="fas fa-comments"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+</html>

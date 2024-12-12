@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/home.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!-- kiểu chữ -->
+    <title>Hoàng Gia Home</title>
+</head>
+
+<body>
+    <!-- Thanh menu -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../images/logo1.png" class="logo-img" alt="Logo">
+        </div>
+
+        <!-- Danh sách menu -->
+        <ul class="menu">
+            <li><a href="home.html" id="home">Trang Chủ</a></li>
+            <li class="dropdown">
+                <a href="#services">Dịch Vụ</a>
+                <div class="dropdown-content">
+                    <a href="booking.html">Dịch Vụ Đặt Phòng</a>
+                    <a href="services.html">Dịch Vụ Phòng</a>
+                </div>
+            </li>
+            <li><a href="news.html" id="tintuc">Tin Tức</a></li>
+        </ul>
+
+        <!-- Mục đăng nhập, đăng ký -->
+        <div class="auth">
+            <a href="login.html">Đăng Nhập</a>
+            <span class="separator">|</span>
+            <a href="register.html">Đăng Ký <i class="fa-solid fa-circle-user"></i></a> <!-- Thêm biểu tượng -->
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <!-- Hình ảnh chủ đạo chuyển thành video -->
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="../../images/Màu be Được minh họa Công ty  Nhà thầu Xây dựng Ảnh bìa Facebook.mp4"
+                type="video/mp4">
+
+    </section>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+        <select name="branch" id="branch">
+            <option value="">Chi nhánh</option>
+            <option value="hanoi">Hà Nội</option>
+            <option value="hcm">TP HCM</option>
+            <option value="danang">Đà Nẵng</option>
+        </select>
+
+        <select name="price" id="price">
+            <option value="">Giá</option>
+            <option value="low">Dưới 2 triệu</option>
+            <option value="medium">2 - 5 triệu</option>
+            <option value="high">Trên 5 triệu</option>
+        </select>
+
+        <select name="area" id="area">
+            <option value="">Diện tích</option>
+            <option value="small">Dưới 20m²</option>
+            <option value="medium">20-40m²</option>
+            <option value="large">Trên 40m²</option>
+        </select>
+
+        <div class="search-input-container">
+            <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+                list="search-suggestions">
+            <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+        </div>
+
+        <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+    </div>
+
+
+
+    <!-- Tiêu đề các phòng đang trống -->
+    <h1 class="available-rooms">Các Phòng Đang Trống</h1>
+
+    <!-- Danh sách phòng -->
+    <div class="room-list">
+        <!-- Phòng 1 -->
+        <a href="room-details.html?room=101">
+            <div class="room-item">
+                <img src="../../images/atm1.jpg" alt="Phòng 1" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 3.000.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 101</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng rộng rãi, thoáng mát, đầy đủ tiện nghi. Phù hợp cho gia đình hoặc nhóm bạn.
+                </div>
+            </div>
+        </a>
+        <!-- Room 2 -->
+        <a href="room-details.html?room=102">
+            <div class="room-item">
+                <img src="../../images/atm2.jpg" alt="Phòng 2" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 2.000.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 102</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> TP HCM
+                </div>
+                <div class="room-description">
+                    Phòng tiện nghi, thích hợp cho những ai tìm kiếm sự yên tĩnh và thoải mái.
+                </div>
+            </div>
+        </a>
+
+
+
+        <!-- Room 3 -->
+        <a href="room-details.html?room=103">
+            <div class="room-item"> <img src="../../images/atm3.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 4.000.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 103</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Đà Nẵng
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+
+
+        <!-- Room 4 -->
+        <a href="room-details.html?room=104">
+            <div class="room-item">
+                <img src="../../images/atm4.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 1.500.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 104</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+            </div>
+        </a>
+
+
+
+        <!-- Room 5 -->
+        <a href="room-details.html?room=201">
+            <div class="room-item"><img src="../../images/atm5.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 2.500.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 201</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+
+
+        <!-- Room 6 -->
+        <a href="room-details.html?room=202">
+            <div class="room-item"> <img src="../../images/atm6.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 3.500.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 202</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+
+        <!-- Room 7 -->
+        <a href="room-details.html?room=203">
+            <div class="room-item"> <img src="../../images/atm7.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 3.000.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 203</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+
+
+        <!-- Room 8 -->
+        <a href="room-details.html?room=204">
+            <div class="room-item">
+                <img src="../../images/atm7.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 3.600.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 204</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+        <!-- Room 9 -->
+        <a href="room-details.html?room=301">
+            <div class="room-item">
+                <img src="../../images/atm7.jpg" alt="Phòng 3" class="room-image">
+                <div class="room-price">
+                    <i class="fas fa-dollar-sign"></i> 2.000.000 VND
+                </div>
+                <div class="room-name">
+                    <i class="fa-solid fa-house"></i>
+                    <strong>Phòng 301</strong>
+                </div>
+                <div class="room-location">
+                    <i class="fas fa-map-marker-alt"></i> Hà Nội
+                </div>
+                <div class="room-description">
+                    Phòng cao cấp với đầy đủ các tiện ích hiện đại. Phù hợp cho những khách hàng yêu cầu cao.
+                </div>
+
+            </div>
+        </a>
+
+
+
+
+
+    </div>
+
+
+    <!-- Phần thông tin giải đáp thắc mắc -->
+    <div class="faq-section">
+        <h1 class="faq-title">Giải đáp thắc mắc của bạn</h1>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h2 class="faq-question" onclick="toggleAnswer(0)">
+                    Hợp đồng khi thuê cần lưu ý những gì?
+                    <i class="fas fa-chevron-down"></i>
+                </h2>
+                <p class="faq-answer">
+                    Trước khi ký hợp đồng thuê tại Hoàng Gia Home, cần chú ý: tiền thuê trọ, giá thuê phòng,
+                    giá điện và nước sinh hoạt, thời hạn hợp đồng, số lượng người ở tối đa, xác định trách nhiệm của
+                    các
+                    bên.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question" onclick="toggleAnswer(1)">
+                    Kinh nghiệm khi thuê phòng?
+                    <i class="fas fa-chevron-down"></i>
+                </h2>
+                <p class="faq-answer">
+                    Cần xác định vị trí thuê phòng trọ ở Hà Nội để thuận tiện cho việc di chuyển học và đi làm;
+                    Ưu tiên lựa chọn các khu vực an ninh, có bãi giữ xe; Kiểm tra kỹ các thiết bị trước khi dọn vào;
+                    Đọc thật kỹ hợp đồng trước khi ký.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question" onclick="toggleAnswer(2)">
+                    Cách tìm phòng trọ nhanh?
+                    <i class="fas fa-chevron-down"></i>
+                </h2>
+                <p class="faq-answer">
+                    Để tìm phòng trọ ở Hà Nội nhanh chóng, bạn có thể hỏi thăm thông tin từ bạn bè, người thân;
+                    Tham gia các hội nhóm tìm phòng trọ; Tìm kiếm chủ động trên HoangGiaHome.com.vn
+                    để tìm kiếm phòng trọ phù hợp với nhu cầu bản thân.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Phần chat book -->
+    <div class="chat-book">
+        <h3>Bạn Cần Hỗ Trợ ?</h3>
+        <div class="chat-container">
+            <label for="userName">Tên của bạn:</label>
+            <input type="text" id="userName" placeholder="Nhập tên của bạn">
+
+            <label for="userPhone">Số điện thoại:</label>
+            <input type="text" id="userPhone" placeholder="Nhập số điện thoại của bạn">
+
+            <label for="userEmail">Email:</label>
+            <input type="text" id="userEmail" placeholder="Nhập email của bạn">
+
+            <label for="userMessage">Lời nhắn:</label>
+            <textarea id="userMessage" placeholder="Nhập lời nhắn của bạn" rows="3"></textarea>
+
+            <button onclick="sendMessage()">Gửi</button>
+        </div>
+    </div>
+
+    <!-- Các chi nhánh của Hoàng Gia Home -->
+    <div class="branches">
+        <h2 class="branches-title">Các chi nhánh của Hoàng Gia Home</h2>
+        <div class="branch-list">
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 322, Đường Mỹ Đình, Hà Nội</p>
+                <p class="branch-phone">Tel: 0123 456 789</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh TP.HCM</strong>
+                <p class="branch-address">Số 456, Đường Y, TP.HCM</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Đà Nẵng</strong>
+                <p class="branch-address">Số 456, Đường Y, Đà Nẵng</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Tiêu đề chính -->
+        <h1 class="footer-title">Hoàng Gia Home - Chạm đến chất lượng, sống an lành</h1>
+
+        <!-- Nội dung footer -->
+        <div class="footer-content">
+            <!-- Phần giới thiệu -->
+            <div class="footer-introduction">
+                <h2>
+                    <span class="highlight-green">Về Chúng Tôi ?</span>
+                </h2>
+                <p>Hoàng Gia Home luôn tự hào là nơi mang đến cho bạn những phòng trọ tiện nghi và hiện đại với mức
+                    giá
+                    hợp
+                    lý. Chúng tôi luôn cam kết đặt chất lượng lên hàng đầu, đảm bảo mang lại sự hài lòng tối đa cho
+                    khách hàng. Hãy đến với Hoàng Gia Home để trải nghiệm không gian sống an lành, tiện nghi, và an
+                    toàn. Chúng tôi luôn nỗ lực vì sự thoải mái và hạnh phúc của bạn.</p>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <p><strong>Trụ sở chính:</strong> 322 Mỹ Đình, Hà Nội</p>
+                <p><strong>Điện thoại:</strong> +84 123 456 789</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@hoanggiahome.com">hoanggiahome.hn@gmail.com</a>
+                </p>
+
+                <!-- Theo dõi trên mạng xã hội -->
+                <h3>Theo Dõi Trên Mạng Xã Hội</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://zalo.me" target="_blank"><i class="fas fa-comments"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+</html>

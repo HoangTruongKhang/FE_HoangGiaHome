@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Trọ Hoàng Gia</title>
+    <style>
+        /* CSS cho trang đăng nhập */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #guestBtn {
+            background-color: #f44336;
+        }
+
+        #guestBtn:hover {
+            background-color: #d32f2f;
+        }
+
+        #loginBtn {
+            background-color: #4CAF50;
+        }
+
+        #loginBtn:hover {
+            background-color: #45a049;
+        }
+
+        #errorMessage {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Đăng Nhập</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" required placeholder="Nhập tên đăng nhập">
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" required placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="loginBtn">Đăng nhập</button>
+                <button type="button" id="guestBtn">Tiếp tục với tư cách khách</button>
+            </div>
+            <p id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        // Mảng người dùng giả lập (có thể thay thế bằng API thực tế)
+        const users = [
+            { username: 'admin', password: 'admin123', role: 'admin' },
+            { username: 'user', password: 'user123', role: 'user' }
+        ];
+
+        // Xử lý đăng nhập
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn form reload trang
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Kiểm tra thông tin đăng nhập
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                if (user.role === "admin") {
+                    window.location.href = "admin/html/dashboard-management.html";
+                } else if (user.role === "user") {
+                    window.location.href = "user/html/home.html";
+                }
+            } else {
+                document.getElementById("errorMessage").textContent = "Tên đăng nhập hoặc mật khẩu không đúng!";
+            }
+        });
+
+        // Tiếp tục với tư cách khách
+        document.getElementById("guestBtn").addEventListener("click", function () {
+            window.location.href = "user/html/home.html";
+        });
+    </script>
+</body>
+
+</html>

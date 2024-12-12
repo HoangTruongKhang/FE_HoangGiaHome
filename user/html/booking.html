@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/booking.css">
+    <script src="../js/booking.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!-- kiểu chữ -->
+    <title>Hoàng Gia Home</title>
+</head>
+
+<body>
+    <!-- Thanh menu -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../images/logo1.png" class="logo-img" alt="Logo">
+        </div>
+
+        <!-- Danh sách menu -->
+        <ul class="menu">
+            <li><a href="home.html">Trang Chủ</a></li>
+            <li class="dropdown">
+                <a href="#services" id="dichvu">Dịch Vụ</a>
+                <div class="dropdown-content">
+                    <a href="booking.html" id="dichvu1">Dịch Vụ Đặt Phòng</a>
+                    <a href="services.html" id="dichvu2">Dịch Vụ Phòng</a>
+                </div>
+            </li>
+            <li><a href="news.html" id="tintuc">Tin Tức</a></li>
+        </ul>
+
+        <!-- Mục đăng nhập, đăng ký -->
+        <div class="auth">
+            <a href="login.html">Đăng Nhập</a>
+            <span class="separator">|</span>
+            <a href="register.html">Đăng Ký <i class="fa-solid fa-circle-user"></i></a> <!-- Thêm biểu tượng -->
+
+        </div>
+    </nav>
+
+    <section class="booking-guide">
+        <h2>Hướng Dẫn Dịch Vụ Đặt Phòng</h2>
+        <table class="guide-table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Hướng Dẫn</th>
+                    <th>Chi Tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Chọn phòng</td>
+                    <td>Chọn phòng phù hợp với nhu cầu của bạn và tham khảo thông tin chi tiết về phòng.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chọn thời gian thuê</td>
+                    <td>Chọn khoảng thời gian bạn muốn thuê phòng (6 tháng, 12 tháng, 18 tháng, hoặc 24 tháng).</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Đăng ký thông tin khách hàng</td>
+                    <td>Nhập mã khách hàng, tên phòng và chi nhánh để xác nhận đặt phòng.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Thanh toán</td>
+                    <td>Thanh toán cho dịch vụ phòng đã đặt. Lựa chọn phương thức thanh toán phù hợp.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Xác nhận đặt phòng</td>
+                    <td>Kiểm tra lại thông tin và hoàn tất đăng ký đặt phòng. Chúng tôi sẽ liên hệ để xác nhận.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="booking-form-section">
+        <h2>Đặt Phòng</h2>
+        <form class="booking-form">
+            <table class="booking-table">
+                <h3 class="booking-title">Thông tin người đặt</h3>
+
+                <tr>
+                    <td>Danh xưng:</td>
+                    <td>
+                        <label><input type="radio" name="danh_xung" value="Anh"> Anh</label>
+                        <label><input type="radio" name="danh_xung" value="Chị"> Chị</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Họ và tên:</td>
+                    <td><input type="text" name="ho_va_ten" placeholder="Nhập họ và tên khách" required></td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td><input type="tel" name="so_dien_thoai" placeholder="Nhập số điện thoại" required></td>
+                </tr>
+                <tr>
+                    <td>Tên phòng:</td>
+                    <td><input type="text" name="ten_phong" placeholder="Nhập tên phòng" required></td>
+                </tr>
+                <tr>
+                    <td>Chi nhánh:</td>
+                    <td>
+                        <select name="chi_nhanh" required>
+                            <option value="ha_noi">Hà Nội</option>
+                            <option value="da_nang">Đà Nẵng</option>
+                            <option value="tp_hcm">Thành phố HCM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thời gian thuê:</td>
+                    <td>
+                        <select name="thoi_gian_thue" required>
+                            <option value="6">6 tháng</option>
+                            <option value="12">12 tháng</option>
+                            <option value="18">18 tháng</option>
+                            <option value="24">24 tháng</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày bắt đầu thuê:</td>
+                    <td><input type="date" name="ngay_bat_dau" required></td>
+                </tr>
+                <tr>
+                    <td>Ngày kết thúc:</td>
+                    <td><input type="date" name="ngay_ket_thuc" required></td>
+                </tr>
+                <tr>
+                    <td><label>Hình thức thanh toán:</label></td>
+                    <td>
+                        <input type="radio" id="payment-direct" name="payment" value="direct"
+                            onclick="toggleOnlinePayment(false)">
+                        <label for="payment-direct">Thanh toán trực tiếp</label>
+                        <input type="radio" id="payment-online" name="payment" value="online"
+                            onclick="toggleOnlinePayment(true)">
+                        <label for="payment-online">Thanh toán online</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ghi chú:</td>
+                    <td><textarea name="ghi_chu" placeholder="Nhập ghi chú"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Đặt Phòng</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <!-- Form thanh toán online (Modal) -->
+    <div id="online-payment-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Thanh Toán</h3>
+
+            <!-- Bảng thông tin thanh toán -->
+            <table class="payment-info-table">
+                <tr>
+                    <td><strong>Chi nhánh:</strong></td>
+                    <td>Hà Nội</td>
+                </tr>
+                <tr>
+                    <td><strong>Địa chỉ:</strong></td>
+                    <td>322 Mỹ Đình, Hà Nội</td>
+                </tr>
+                <tr>
+                    <td><strong>Tên phòng:</strong></td>
+                    <td>Room 101</td>
+                </tr>
+                <tr>
+                    <td><strong>Số tiền cọc phòng:</strong></td>
+                    <td>1,000,000 VND</td>
+                </tr>
+                <tr>
+                    <td><strong>Nội dùng thanh toán:</strong></td>
+                    <td>Họ và tên người chuyển - Số điện thoại.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ví dụ:</strong></td>
+                    <td>Nguyễn Văn A - 0123456789</td>
+                </tr>
+            </table>
+
+            <img src="../../images/anhqr.jpg" alt="QR Code" class="qr-code">
+            <button onclick="confirmPayment()">Đã thanh toán</button>
+            <p class="note">
+                Lưu ý: Đây là thanh toán tiền cọc phòng, không bao gồm tiền phòng và dịch vụ.<br>
+                Khi bạn đã thanh toán và muốn thay đổi ý định, hãy liên hệ lại với chúng tôi trong vòng 7 ngày,
+                chúng tôi sẽ hoàn lại cọc không quá 7 ngày kể từ ngày cọc!. <br>
+                Chúng tôi sẽ liên hệ đến bạn theo thông tin mà bạn cung cấp, để xác nhận thêm một lần nữa. Thank!
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Các chi nhánh của Hoàng Gia Home -->
+    <div class="branches">
+        <h2 class="branches-title">Các chi nhánh của Hoàng Gia Home</h2>
+        <div class="branch-list">
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 322, Đường Mỹ Đình, Hà Nội</p>
+                <p class="branch-phone">Tel: 0123 456 789</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh TP.HCM</strong>
+                <p class="branch-address">Số 456, Đường Y, TP.HCM</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Đà Nẵng</strong>
+                <p class="branch-address">Số 456, Đường Y, Đà Nẵng</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Tiêu đề chính -->
+        <h1 class="footer-title">Hoàng Gia Home - Chạm đến chất lượng, sống an lành</h1>
+
+        <!-- Nội dung footer -->
+        <div class="footer-content">
+            <!-- Phần giới thiệu -->
+            <div class="footer-introduction">
+                <h2>
+                    <span class="highlight-green">Về Chúng Tôi ?</span>
+                </h2>
+                <p>Hoàng Gia Home luôn tự hào là nơi mang đến cho bạn những phòng trọ tiện nghi và hiện đại với mức
+                    giá
+                    hợp
+                    lý. Chúng tôi luôn cam kết đặt chất lượng lên hàng đầu, đảm bảo mang lại sự hài lòng tối đa cho
+                    khách hàng. Hãy đến với Hoàng Gia Home để trải nghiệm không gian sống an lành, tiện nghi, và an
+                    toàn. Chúng tôi luôn nỗ lực vì sự thoải mái và hạnh phúc của bạn.</p>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <p><strong>Trụ sở chính:</strong> 322 Mỹ Đình, Hà Nội</p>
+                <p><strong>Điện thoại:</strong> +84 123 456 789</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@hoanggiahome.com">hoanggiahome.hn@gmail.com</a>
+                </p>
+
+                <!-- Theo dõi trên mạng xã hội -->
+                <h3>Theo Dõi Trên Mạng Xã Hội</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://zalo.me" target="_blank"><i class="fas fa-comments"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+</html>

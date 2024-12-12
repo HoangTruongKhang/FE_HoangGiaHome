@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/customer-management.css">
+  <script src="../js/customer-management.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Admin</title>
+</head>
+
+<body>
+  <div class="admin-dashboard">
+    <div class="logo">
+      <p class="welcome-text">Welcome</p>
+      <span class="logo-text">Hoàng Gia Home</span>
+    </div>
+    <div class="greeting">
+      <p>Xin chào, <span id="username">Admin</span></p>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="dashboard-management.html">Dashboard</a></li>
+        <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+        <li><a href="room-management.html">Quản lý phòng</a></li>
+        <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+        <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+        <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+        <li><a href="news-management.html">Quản lý tin tức</a></li>
+        <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+        <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+        <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+        <li><a href="account-management.html">Tài khoản</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <!-- Branches Section -->
+    <div class="branches">
+      <i class="fa-solid fa-location-dot"></i>
+      <div class="branch-list">
+        <select>
+          <option value="">Chọn chi nhánh</option>
+          <option value="tp_hanoi">TP.Hà Nội</option>
+          <option value="tp_hcm">TP.Hồ Chí Minh</option>
+          <option value="tp_danang">TP.Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="adrees-list">
+        <select>
+          <option value="">Cơ sở</option>
+          <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+          <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+          <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+          <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="search-input-container">
+        <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+          list="search-suggestions">
+        <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+      </div>
+      <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+    </div>
+
+    <!-- Nút mở modal -->
+    <div class="add-customer">
+      <button class="add-customer-button" onclick="openModal()">+ Thêm khách hàng</button>
+    </div>
+    <h2>Danh sách Khách hàng</h2>
+
+    <!-- Danh sách khách hàng -->
+    <div class="customer-list">
+      <table class="customer-table">
+        <thead>
+          <tr>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Số điện thoại</th>
+            <th>Ngày tạo</th>
+            <th>Chi tiết</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KH001</td>
+            <td>Nguyễn Văn A</td>
+            <td>0123456789</td>
+            <td>01/01/2024</td>
+            <td><a href="customer-details-management.html" class="detail-link">Xem chi tiết</a></td>
+            <td>
+              <button class="edit-button" onclick="openEditModal()">Sửa</button>
+              <button class="delete-button" onclick="openDeleteModal()">Xóa</button>
+            </td>
+          </tr>
+          <!-- Thêm các khách hàng khác nếu cần -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Thêm mới khách hàng -->
+    <div class="add-account-modal" id="addCustomerModal">
+      <div class="modal-content">
+        <h2>Thêm mới khách hàng</h2>
+        <form id="addCustomerForm">
+          <label for="full_name">Họ và tên</label>
+          <input type="text" id="full_name" name="full_name" required />
+
+          <label for="cmnd">CMND</label>
+          <input type="text" id="cmnd" name="cmnd" required />
+
+          <label for="phone_number">Số điện thoại</label>
+          <input type="text" id="phone_number" name="phone_number" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="birth_date">Ngày sinh</label>
+          <input type="date" id="birth_date" name="birth_date" required />
+
+          <label for="address">Địa chỉ</label>
+          <input type="text" id="address" name="address" required />
+
+          <label for="join_date">Ngày tham gia</label>
+          <input type="date" id="join_date" name="join_date" required />
+
+          <label for="branchBranch_id">Chi nhánh</label>
+          <select id="branchBranch_id" name="branchBranch_id" required>
+            <option value="1">Chi nhánh 1</option>
+            <option value="2">Chi nhánh 2</option>
+            <option value="3">Chi nhánh 3</option>
+          </select>
+
+          <label for="roomRoom_id">Phòng</label>
+          <select id="roomRoom_id" name="roomRoom_id" required>
+            <option value="1">Phòng 1</option>
+            <option value="2">Phòng 2</option>
+            <option value="3">Phòng 3</option>
+          </select>
+
+          <div class="modal-buttons">
+            <button type="button" class="close-button" onclick="closeCreateModal()">
+              Đóng
+            </button>
+            <button type="submit" class="save-button">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update khách hàng -->
+    <div class="Update-account-modal" id="updateCustomerModal">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="modal-content">
+          <h2>Cập nhật khách hàng</h2>
+          <form id="updateCustomerForm">
+            <label for="update-customer_id">ID</label>
+            <input disabled type="text" id="update-customer_id" name="update-customer_id" required />
+
+            <label for="update-full_name">Họ và tên</label>
+            <input type="text" id="update-full_name" name="update-full_name" required />
+
+            <label for="update-cmnd">CMND</label>
+            <input type="text" id="update-cmnd" name="update-cmnd" required />
+
+            <label for="update-phone_number">Số điện thoại</label>
+            <input type="text" id="update-phone_number" name="update-phone_number" required />
+
+            <label for="update-email">Email</label>
+            <input type="email" id="update-email" name="update-email" required />
+
+            <label for="update-birth_date">Ngày sinh</label>
+            <input type="date" id="update-birth_date" name="update-birth_date" required />
+
+            <label for="update-address">Địa chỉ</label>
+            <input type="text" id="update-address" name="update-address" required />
+
+            <label for="update-join_date">Ngày tham gia</label>
+            <input type="date" id="update-join_date" name="update-join_date" required />
+
+            <label for="update-branchBranch_id">Chi nhánh</label>
+            <select id="update-branchBranch_id" name="update-branchBranch_id" required>
+              <option value="1">Chi nhánh 1</option>
+              <option value="2">Chi nhánh 2</option>
+              <option value="3">Chi nhánh 3</option>
+            </select>
+
+            <label for="update-roomRoom_id">Phòng</label>
+            <select id="update-roomRoom_id" name="update-roomRoom_id" required>
+              <option value="1">Phòng 1</option>
+              <option value="2">Phòng 2</option>
+              <option value="3">Phòng 3</option>
+            </select>
+
+            <div class="modal-buttons">
+              <button type="button" class="close-button" onclick="closeUpdateModal()">
+                Đóng
+              </button>
+              <button type="submit" class="save-button">Cập nhật</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

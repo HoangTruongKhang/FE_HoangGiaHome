@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/branches-management.css" />
+  <link rel="stylesheet" href="../css/notification.css" />
+  <script src="../js/branches-management.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <title>Admin</title>
+</head>
+
+<body>
+  <div class="admin-dashboard">
+    <div class="logo">
+      <p class="welcome-text">Welcome</p>
+      <span class="logo-text">Hoàng Gia Home</span>
+    </div>
+    <div class="greeting">
+      <p>Xin chào, <span id="username">Admin</span></p>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="dashboard-management.html">Dashboard</a></li>
+        <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+        <li><a href="room-management.html">Quản lý phòng</a></li>
+        <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+        <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+        <li><a href="invoice-management.html">Quản lý hóa đơn</a></li>
+        <li><a href="news-management.html">Quản lý tin tức</a></li>
+        <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+        <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+        <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+        <li><a href="account-management.html">Tài khoản</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <!-- Branches Section -->
+    <div class="branches">
+      <i class="fa-solid fa-location-dot"></i>
+      <div class="branch-list">
+        <select>
+          <option value="">Chọn chi nhánh</option>
+          <option value="tp_hanoi">TP.Hà Nội</option>
+          <option value="tp_hcm">TP.Hồ Chí Minh</option>
+          <option value="tp_danang">TP.Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="adrees-list">
+        <select>
+          <option value="">Cơ sở</option>
+          <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+          <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+          <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+          <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="search-input-container">
+        <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+          list="search-suggestions" />
+        <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+      </div>
+      <button class="search-button" onclick="searchFunction()">
+        Tìm Kiếm
+      </button>
+    </div>
+    <div class="add-branches">
+      <h2>Danh Sách Chi Nhánh</h2>
+      <button class="add-branches-button">+ Thêm chi nhánh</button>
+    </div>
+    <div class="branches-list">
+      <table class="branches-table">
+        <thead>
+          <tr>
+            <th>Mã chi nhánh</th>
+            <th>Tên chi nhánh</th>
+            <th>Địa chỉ</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CN001</td>
+            <td>Hà Nội</td>
+            <td>123, Hà Nội</td>
+            <td>
+              <button class="edit-button" onclick="openEditModal()">Sửa</button>
+              <button class="delete-button" onclick="openDeleteModal()">Xóa</button>
+            </td>
+          </tr>
+          <!-- Thêm các hợp đồng khác nếu cần -->
+
+        </tbody>
+      </table>
+    </div>
+    <!-- Thêm chi nhánh -->
+    <div class="add-branch">
+      <div class="add-branch-modal" id="addBranchModal">
+        <div class="modal-content">
+          <h2>Thêm mới chi nhánh</h2>
+          <form id="addBranchForm">
+            <label for="branch_name">Tên chi nhánh</label>
+            <input type="text" id="branch_name" name="branch_name" required />
+
+            <label for="address">Địa chỉ</label>
+            <input type="text" id="address" name="address" required />
+
+            <div class="modal-buttons">
+              <button type="button" class="close-button" onclick="closeBranchModal()">
+                Đóng
+              </button>
+              <button type="submit" class="save-button">Lưu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Cập nhật chi nhánh -->
+    <div class="update-branch">
+      <div class="update-branch-modal" id="updateBranchModal">
+        <div class="modal-content">
+          <h2>Cập nhật chi nhánh</h2>
+          <form id="updateBranchForm">
+            <label for="update_branch_id">ID chi nhánh</label>
+            <input disabled type="text" id="update_branch_id" name="update_branch_id" required />
+            <label for="update_branch_name">Tên chi nhánh</label>
+            <input type="text" id="update_branch_name" name="update_branch_name" required />
+
+            <label for="uppate_address">Địa chỉ</label>
+            <input type="text" id="uppate_address" name="update_address" required />
+
+            <div class="modal-buttons">
+              <button type="button" class="close-button" onclick="closeUpdateBranchModal()">
+                Đóng
+              </button>
+              <button type="submit" class="save-button">Lưu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="notification" class="notification hidden"></div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/contract-details-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="admin-dashboard">
+        <div class="logo">
+            <p class="welcome-text">Welcome</p>
+            <span class="logo-text">Hoàng Gia Home</span>
+        </div>
+        <div class="greeting">
+            <p>Xin chào, <span id="username">Admin</span></p>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="dashboard-management.html">Dashboard</a></li>
+                <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+                <li><a href="room-management.html">Quản lý phòng</a></li>
+                <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+                <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+                <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+                <li><a href="news-management.html">Quản lý tin tức</a></li>
+                <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+                <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+                <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+                <li><a href="account-management.html">Tài khoản</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!-- Branches Section -->
+        <div class="branches">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="branch-list">
+                <select>
+                    <option value="">Chọn chi nhánh</option>
+                    <option value="tp_hanoi">TP.Hà Nội</option>
+                    <option value="tp_hcm">TP.Hồ Chí Minh</option>
+                    <option value="tp_danang">TP.Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="adrees-list">
+                <select>
+                    <option value="">Cơ sở</option>
+                    <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+                    <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+                    <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+                    <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="search-input-container">
+                <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+                    list="search-suggestions">
+                <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+            </div>
+            <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+        </div>
+        <div class="details-container">
+            <h4>Chi Tiết Hợp Đồng</h4>
+            <table class="details-table">
+                <tr>
+                    <th>Mã hợp đồng</th>
+                    <td>KH001</td>
+                </tr>
+                <tr>
+                    <th>Tên hợp đồng</th>
+                    <td>Hợp đồng thuê nhà</td>
+                </tr>
+                <tr>
+                    <th>Tên phòng</th>
+                    <td>R101</td>
+                </tr>
+                <tr>
+                    <th>Họ và tên</th>
+                    <td>Nguyễn Văn A</td>
+                </tr>
+                <tr>
+                    <th>Thời hạn hợp đồng</th>
+                    <td>6 tháng</td>
+                </tr>
+                <tr>
+                    <th>Ngày bắt đầu</th>
+                    <td>12/01/2020</td>
+                </tr>
+                <tr>
+                    <th>Ngày kết thúc</th>
+                    <td>12/01/2025</td>
+                </tr>
+                <tr>
+                    <th>Giá thuê phòng</th>
+                    <td>5000000</td>
+                </tr>
+                <tr>
+                    <th>Tiền cọc phòng</th>
+                    <td>1000000</td>
+                </tr>
+                <tr>
+                    <th>Trạng thái hợp đồng</th>
+                    <td>Hoạt động</td>
+                </tr>
+                <tr>
+                    <th>Ghi chú</th>
+                    <td>ghi chú 1 mmcnaJsdxc</td>
+                </tr>
+                <tr>
+                    <th>Ngày tạo</th>
+                    <td>01/01/2024 12:00:00</td>
+                </tr>
+            </table>
+            <div class="modal-buttons">
+                <a href="room-management.html" class="close-button">Thoát</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

@@ -1,0 +1,206 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    width: 17%;
+    /* Chiếm 25% chiều rộng */
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-dashboard .logo {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.admin-dashboard .welcome-text {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+}
+
+.admin-dashboard .logo-text {
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+}
+
+.admin-dashboard .greeting {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1dd1a1;
+}
+
+.admin-dashboard nav {
+    flex-grow: 1;
+}
+
+.admin-dashboard nav ul {
+    list-style: none;
+}
+
+.admin-dashboard nav ul li {
+    margin-bottom: 15px;
+}
+
+.admin-dashboard nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+/* Chỉnh sửa màu nền của menu mục được chọn */
+.admin-dashboard nav ul li a.active {
+    background-color: #8395a7;
+    /* Màu nền khi mục được chọn */
+}
+
+.admin-dashboard nav ul li a:hover {
+    background-color: #34495e;
+    /* Màu nền khi hover các mục khác */
+}
+
+/* Content Area */
+.content {
+    width: 100%;
+    background-color: #dcdde1;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Branches Section */
+.branches {
+    display: flex;
+
+    /* Căn các phần tử bên trái và bên phải */
+    align-items: center;
+    /* Canh giữa theo chiều dọc */
+    gap: 10px;
+    /* Khoảng cách giữa các phần tử */
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 40px;
+    /* Khoảng cách dưới */
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 43%;
+
+}
+
+#branch-list {
+    background-color: #1dd1a1;
+}
+
+.branch-list select {
+    padding: 10px 15px;
+    /* Thêm padding cho select */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 500px;
+    /* Đặt chiều rộng cho select */
+    transition: border-color 0.3s;
+}
+
+/* Thêm hiệu ứng cho ô select */
+.branch-list select:focus {
+    border-color: #3498db;
+    /* Thay đổi màu border khi select được focus */
+    outline: none;
+    /* Loại bỏ viền ngoài mặc định */
+}
+
+.dashboard-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cho phép cuộn xuống khi không đủ không gian */
+    justify-content: flex-start;
+    /* Canh đều các phòng trong hàng */
+    margin: 20px;
+    padding: 0 50px;
+    gap: 20px;
+    /* Cho phép cuộn ngang nếu quá nhiều phòng */
+    max-height: 90%;
+    /* Đặt chiều cao tối đa cho danh sách phòng */
+    overflow-y: auto;
+    /* Thêm thanh cuộn dọc */
+    background: #ffffff;
+
+}
+
+/* Statistics Section */
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Statistic Items */
+.stat-item {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    width: 18%;
+    /* Điều chỉnh để 5 ô chiếm 18% mỗi ô */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Thống kê biểu đồ */
+.chart-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.chart {
+    width: 45%;
+}
+
+canvas {
+    width: 100%;
+    height: 300px;
+}

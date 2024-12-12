@@ -1,0 +1,452 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    width: 17%;
+    /* Chiếm 25% chiều rộng */
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-dashboard .logo {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.admin-dashboard .welcome-text {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+}
+
+.admin-dashboard .logo-text {
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+}
+
+.admin-dashboard .greeting {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1dd1a1;
+}
+
+.admin-dashboard nav {
+    flex-grow: 1;
+}
+
+.admin-dashboard nav ul {
+    list-style: none;
+}
+
+.admin-dashboard nav ul li {
+    margin-bottom: 15px;
+}
+
+.admin-dashboard nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+/* Chỉnh sửa màu nền của menu mục được chọn */
+.admin-dashboard nav ul li a.active {
+    background-color: #8395a7;
+    /* Màu nền khi mục được chọn */
+}
+
+.admin-dashboard nav ul li a:hover {
+    background-color: #34495e;
+    /* Màu nền khi hover các mục khác */
+}
+
+/* Content Area */
+.content {
+    width: 100%;
+    background-color: #dcdde1;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Branches Section */
+.branches {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+
+}
+
+#branch-list {
+    background-color: #1dd1a1;
+}
+
+.branch-list select {
+    padding: 10px 15px;
+    /* Thêm padding cho select */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    /* Đặt chiều rộng cho select */
+    transition: border-color 0.3s;
+}
+
+/* Thêm hiệu ứng cho ô select */
+.branch-list select:focus {
+    border-color: #3498db;
+    /* Thay đổi màu border khi select được focus */
+    outline: none;
+    /* Loại bỏ viền ngoài mặc định */
+}
+
+#adrees-list {
+    background-color: #1dd1a1;
+}
+
+.adrees-list select {
+    padding: 10px 15px;
+    /* Thêm padding cho select */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    /* Đặt chiều rộng cho select */
+    transition: border-color 0.3s;
+}
+
+/* Thêm hiệu ứng cho ô select */
+.adrees-list select:focus {
+    border-color: #3498db;
+    /* Thay đổi màu border khi select được focus */
+    outline: none;
+    /* Loại bỏ viền ngoài mặc định */
+}
+
+/* Container của ô tìm kiếm */
+.search-input-container {
+    position: relative;
+    width: 500px;
+    margin-left: 100px;
+}
+
+.branches .search-input,
+.branches .search-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #1b5e20;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+    transition: color 0.3s;
+}
+
+/* Input tìm kiếm */
+.branches .search-input {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Icon "X" trong ô tìm kiếm */
+.clear-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+    display: none;
+}
+
+.search-input:focus~.clear-icon,
+.search-input:not(:placeholder-shown)~.clear-icon {
+    display: block;
+}
+
+/* Nút tìm kiếm */
+.branches .search-button {
+    background-color: #009205;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 10px;
+    font-size: 12px;
+    width: auto;
+}
+
+.branches .search-button:hover {
+    background-color: #cd0000;
+    color: #ffffff;
+}
+
+h2 {
+    color: #009205;
+    margin: 0;
+    margin-left: 40px;
+    /* Loại bỏ margin dư thừa */
+    text-align: left;
+}
+
+/* Nút tìm kiếm */
+.add-branches {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    border-radius: 8px;
+}
+
+
+.add-branches-button {
+    background-color: #009205;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 100px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.branches-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cho phép cuộn xuống khi không đủ không gian */
+    justify-content: flex-start;
+    /* Canh đều các phòng trong hàng */
+    margin: 20px;
+    gap: 20px;
+    /* Cho phép cuộn ngang nếu quá nhiều phòng */
+    max-height: 100%;
+    /* Đặt chiều cao tối đa cho danh sách phòng */
+    overflow-y: auto;
+    /* Thêm thanh cuộn dọc */
+}
+
+.branches-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.branches-table thead {
+    background-color: #009205;
+    color: white;
+}
+
+.branches-table th,
+.branches-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.branches-table th {
+    font-weight: bold;
+}
+
+.branches-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.branches-table tbody tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* Nút thao tác */
+.edit-btn,
+.delete-btn {
+    background-color: #009205;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #007a03;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Modal content */
+.modal-content {
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #009205;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-button,
+.save-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.close-button:hover {
+    background-color: #c0392b;
+}
+
+.save-button {
+    background-color: #009205;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #007a03;
+}
+
+
+
+
+
+
+.add-branch-modal, .update-branch-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Mặc định ẩn */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.add-branch {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.update-branch {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Nút thao tác */
+.edit-button,
+.delete-button {
+    background-color: #009205;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #007a03;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}

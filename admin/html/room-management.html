@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/room-management.css">
+    <script src="../js/room-management.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="admin-dashboard">
+        <div class="logo">
+            <p class="welcome-text">Welcome</p>
+            <span class="logo-text">Hoàng Gia Home</span>
+        </div>
+        <div class="greeting">
+            <p>Xin chào, <span id="username">Admin</span></p>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="dashboard-management.html">Dashboard</a></li>
+                <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+                <li><a href="room-management.html">Quản lý phòng</a></li>
+                <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+                <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+                <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+                <li><a href="news-management.html">Quản lý tin tức</a></li>
+                <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+                <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+                <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+                <li><a href="account-management.html">Tài khoản</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <select>
+                <option value="">Trạng thái phòng</option>
+                <option value="available">Còn trống</option>
+                <option value="occupied">Đã thuê</option>
+            </select>
+            <select>
+                <option value="">Trạng thái giá</option>
+                <option value="below2mil">Dưới 2 triệu</option>
+                <option value="2to4mil">2 đến 4 triệu</option>
+                <option value="4to8mil">4 đến 8 triệu</option>
+                <option value="above8mil">Trên 8 triệu</option>
+            </select>
+            <div class="search-input-container">
+                <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+                    list="search-suggestions">
+                <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+            </div>
+            <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+        </div>
+
+        <!-- Branches Section -->
+        <div class="branches">
+            <div class="branch-list">
+
+                <select>
+                    <option value="">Chọn chi nhánh</option>
+                    <option value="tp_hanoi">TP.Hà Nội</option>
+                    <option value="tp_hcm">TP.Hồ Chí Minh</option>
+                    <option value="tp_danang">TP.Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="adrees-list">
+                <select>
+                    <option value="">Cơ sở</option>
+                    <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+                    <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+                    <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+                    <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+                </select>
+            </div>
+
+
+        </div>
+        <div class="menu-room">
+            <ul>
+                <li><a href="room-management.html">Danh sách phòng</a></li>
+                <li><span class="divider">|</span></li>
+                <li><a href="booking-management.html">Danh sách khách đặt phòng</a></li>
+            </ul>
+        </div>
+
+        <div class="add-room">
+            <button class="add-room-button" onclick="showAddRoomModal11()">+ Thêm phòng</button>
+        </div>
+
+        <!-- Model thêm phòng -->
+        <div class="add-room-modal1" id="addRoomModal1">
+            <div class="modal-content1">
+                <h2>Thêm mới phòng</h2>
+                <form id="addRoomForm">
+                    <label for="room-name">Tên phòng</label>
+                    <input type="text" id="room-name" name="room-name" required />
+
+                    <label for="room-image">Hình ảnh (đường dẫn)</label>
+                    <input type="text" id="room-image" name="room-image" required />
+
+                    <label for="room-price">Giá phòng</label>
+                    <input type="number" id="room-price" name="room-price" required />
+
+                    <label for="room-area">Diện tích (m²)</label>
+                    <input type="number" id="room-area" name="room-area" required />
+
+                    <label for="room-description">Mô tả phòng</label>
+                    <textarea id="room-description" name="room-description" placeholder="Mô tả chi tiết về phòng"
+                        rows="4"></textarea>
+
+                    <label for="branch">Chi nhánh</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">Chọn chi nhánh</option>
+                        <option value="1">TP. Hà Nội</option>
+                        <option value="2">TP. Hồ Chí Minh</option>
+                        <option value="3">TP. Đà Nẵng</option>
+                    </select>
+
+                    <div class="modal-buttons1">
+                        <button type="button" class="close-button5" onclick="closeModal()">Thoát</button>
+                        <button type="submit" class="save-button5">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Cập nhật phòng thêm phòng -->
+        <div class="update-room-modal1" id="updateRoomModal2">
+            <div class="modal-content2">
+                <h2>Cập nhật phòng</h2>
+                <form id="addRoomForm">
+                    <label for="room-name">Mã phòng</label>
+                    <input type="text" id="room-name" name="room-name" required />
+
+                    <label for="room-name">Tên phòng</label>
+                    <input type="text" id="room-name" name="room-name" required />
+
+                    <label for="room-image">Hình ảnh (đường dẫn)</label>
+                    <input type="text" id="room-image" name="room-image" required />
+
+                    <label for="room-price">Giá phòng</label>
+                    <input type="number" id="room-price" name="room-price" required />
+
+                    <label for="room-area">Diện tích (m²)</label>
+                    <input type="number" id="room-area" name="room-area" required />
+
+                    <label for="room-description">Mô tả phòng</label>
+                    <textarea id="room-description" name="room-description" placeholder="Mô tả chi tiết về phòng"
+                        rows="4"></textarea>
+
+                    <label for="branch">Chi nhánh</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">Chọn chi nhánh</option>
+                        <option value="1">TP. Hà Nội</option>
+                        <option value="2">TP. Hồ Chí Minh</option>
+                        <option value="3">TP. Đà Nẵng</option>
+                    </select>
+
+                    <label for="roomStatus">Trạng thái</label>
+                    <select id="roomStatus" name="roomStatus" required>
+                        <option value="0">Trống</option>
+                        <option value="1">Đã Đặt</option>
+                    </select>
+
+                    <div class="modal-buttons2">
+                        <button type="button" class="close-button2" onclick="closeModa2()">Thoát</button>
+                        <button type="submit" class="save-button2">Cập nhật</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="room-list">
+            <!-- Room Item 1 -->
+            <div class="room-item">
+                <div class="room-name-icon">
+                    <i class="fas fa-door-closed room-icon"></i>
+                    <p class="room-name">Phòng 101</p>
+                </div>
+                <div class="customer-name-icon">
+                    <i class="fas fa-user customer-icon"></i>
+                    <p class="customer-name">Nguyễn Văn A</p>
+                </div>
+                <p class="price">Giá: 3,000,000 VND</p>
+                <button class="btn-checkout">Trả phòng</button>
+                <div class="room-buttons">
+                    <button class="btn-edit" onclick="openEditModal2()">Chỉnh sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                </div>
+            </div>
+
+            <!-- Room Item 2 -->
+            <div class="room-item">
+                <div class="room-name-icon">
+                    <i class="fas fa-door-closed room-icon"></i>
+                    <p class="room-name">Phòng 102</p>
+                </div>
+                <div class="customer-name-icon">
+                    <i class="fas fa-user customer-icon"></i>
+                    <p class="customer-name">Trần Minh B</p>
+                </div>
+                <p class="price">Giá: 3,500,000 VND</p>
+                <button class="btn-checkout">Trả phòng</button>
+                <div class="room-buttons">
+                    <button class="btn-edit" onclick="openEditModal2()">Chỉnh sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                </div>
+            </div>
+
+            <!-- Room Item 3 -->
+            <div class="room-item">
+                <div class="room-name-icon">
+                    <i class="fas fa-door-closed room-icon"></i>
+                    <p class="room-name">Phòng 103</p>
+                </div>
+                <div class="customer-name-icon">
+                    <i class="fas fa-user customer-icon"></i>
+                    <p class="customer-name">Lê Thị C</p>
+                </div>
+                <p class="price">Giá: 2,800,000 VND</p>
+                <button class="btn-checkout">Trả phòng</button>
+                <div class="room-buttons">
+                    <button class="btn-edit" onclick="openEditModal2()">Chỉnh sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

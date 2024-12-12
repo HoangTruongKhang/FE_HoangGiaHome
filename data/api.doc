@@ -1,0 +1,109 @@
+PAGE:
+	- ACCOUNT:
+		- get all accounts: 	http://localhost:8080/api/v1/accounts
+		- get account by id: 	http://localhost:8080/api/v1/accounts/1
+		- get search; 			http://localhost:8080/api/v1/accounts?search=admin01
+		- ADD:					http://localhost:8080/api/v1/accounts
+		- Update:				http://localhost:8080/api/v1/accounts/4
+		- Delete:				http://localhost:8080/api/v1/accounts/delete/4
+	- ROOM:
+		- get all rooms:		http://localhost:8080/api/v1/rooms
+		- get room by id:		http://localhost:8080/api/v1/rooms/1
+		- get search:			http://localhost:8080/api/v1/rooms?search=
+		- lọc trạng thái giá:	http://localhost:8080/api/v1/rooms?minPrice=1000000&maxPrice=5000000
+		- Lọc diện tích: 		http://localhost:8080/api/v1/rooms?minArea=10&maxArea=26
+		- ADD:					http://localhost:8080/api/v1/rooms
+		- Update:				http://localhost:8080/api/v1/rooms/4
+		- Delete:				http://localhost:8080/api/v1/rooms/delete/4
+		
+	- Customer:
+		- get all Customers:	http://localhost:8080/api/v1/customers
+		- get Customer by id:	http://localhost:8080/api/v1/customers/1
+		- get search:			http://localhost:8080/api/v1/customers?search=
+		- ADD:					http://localhost:8080/api/v1/customers
+		- Update:				http://localhost:8080/api/v1/customers/4
+		- Delete:				http://localhost:8080/api/v1/customers/delete/4
+		
+	- Service:
+		- get all Services:		http://localhost:8080/api/v1/services
+		- get Service by id:	http://localhost:8080/api/v1/services/1
+		- get search:			http://localhost:8080/api/v1/services?search=
+		- ADD:					http://localhost:8080/api/v1/services
+		- Update:				http://localhost:8080/api/v1/services/4
+		- Delete:				http://localhost:8080/api/v1/services/delete/4
+		
+	- Invoice:
+		- get all Invoices:		http://localhost:8080/api/v1/invoices
+		- get Invoice by id:	http://localhost:8080/api/v1/invoices/1
+		- get search:			http://localhost:8080/api/v1/invoices?search=
+		- ADD:					http://localhost:8080/api/v1/invoices
+		- Update:				http://localhost:8080/api/v1/invoices/1
+		- Delete:				http://localhost:8080/api/v1/invoices/delete/4
+		
+	- IncomeStatistics:
+		- get all IncomeStatistics:		http://localhost:8080/api/v1/incomestatistics
+		- get IncomeStatistics by id:	http://localhost:8080/api/v1/incomestatistics/1
+		
+		
+	- Booking:
+		- get all Bookings:		http://localhost:8080/api/v1/bookings
+		- get Booking by id:	http://localhost:8080/api/v1/bookings/3
+		- get search:			http://localhost:8080/api/v1/bookings?search=
+		- ADD:					http://localhost:8080/api/v1/bookings
+		- Update:				http://localhost:8080/api/v1/bookings/4
+		- Delete:				http://localhost:8080/api/v1/bookings/delete/5
+LIST
+	- BRANCH:
+		- get all branch:			http://localhost:8080/api/v1/branch
+		- get branch by id:			http://localhost:8080/api/v1/branch/1
+		- get search:			 	http://localhost:8080/api/v1/branch?search=
+		- ADD:						http://localhost:8080/api/v1/branch
+		- Update:					http://localhost:8080/api/v1/branch/4
+		- Delete:					http://localhost:8080/api/v1/branch/delete/4
+		
+	- CustomerService:
+		- get all CustomerServices:		http://localhost:8080/api/v1/customerservices
+		- get CustomerService by id:	http://localhost:8080/api/v1/customerservices/2
+		- get search:					http://localhost:8080/api/v1/customerservices?search=
+		- ADD:							
+		- Update:						
+		- Delete:
+		
+	- Contract:
+		- get all Contracts:			http://localhost:8080/api/v1/contracts	
+		- get Contract by id:			http://localhost:8080/api/v1/contracts/2
+		- get search:					http://localhost:8080/api/v1/contracts?search=
+		- ADD:							http://localhost:8080/api/v1/contracts
+		- Update:						http://localhost:8080/api/v1/contracts/4
+		- Delete:						http://localhost:8080/api/v1/contracts/delete/4
+		
+	- News:
+		- get all News:		http://localhost:8080/api/v1/news
+		- get News by id:	http://localhost:8080/api/v1/news/1
+		- get search:		http://localhost:8080/api/v1/news?search=
+		- ADD:				http://localhost:8080/api/v1/news
+		- Update:			http://localhost:8080/api/v1/news/4
+		- Delete:			http://localhost:8080/api/v1/news/delete/4
+		
+	- Vehicle:
+		- get all Vehicles:		http://localhost:8080/api/v1/vehicles	
+		- get Vehicle by id:	http://localhost:8080/api/v1/vehicles/1
+		- get search:			http://localhost:8080/api/v1/vehicles?search=
+		- ADD:					http://localhost:8080/api/v1/vehicles
+		- Update:				http://localhost:8080/api/v1/vehicles/1
+		- Delete:				http://localhost:8080/api/v1/vehicles/delete/4
+		
+	- Feedback:
+		- get all Feedbacks:			http://localhost:8080/api/v1/feedbacks	
+		- get Feedback by id:			http://localhost:8080/api/v1/feedbacks/2
+		- get search:					http://localhost:8080/api/v1/feedbacks?search=
+		- ADD feedbacks giao diện User(home - bạn cần hỗ trợ ?): http://localhost:8080/api/v1/feedbacks  
+		- Delete:						http://localhost:8080/api/v1/feedbacks/delete/4
+		
+	- Reply:
+		- get all Replys:		http://localhost:8080/api/v1/replys
+		- get Reply by id:		http://localhost:8080/api/v1/replys/1
+		- get search:			http://localhost:8080/api/v1/replys?search=
+		- Button Phản hồi ở Feedback và lưu vào Reply:http://localhost:8080/api/v1/replys
+		- Delete:				http://localhost:8080/api/v1/replys/delete/4			
+		

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/dashboard-management.css">
+    <script src="../js/dashboard-management.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="admin-dashboard">
+        <div class="logo">
+            <p class="welcome-text">Welcome</p>
+            <span class="logo-text">Hoàng Gia Home</span>
+        </div>
+        <div class="greeting">
+            <p>Xin chào, <span id="username">Admin</span></p>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="dashboard-management.html">Dashboard</a></li>
+                <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+                <li><a href="room-management.html">Quản lý phòng</a></li>
+                <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+                <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+                <li><a href="invoice-management.html">Quản lý hóa đơn</a></li>
+                <li><a href="news-management.html">Quản lý tin tức</a></li>
+                <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+                <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+                <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+                <li><a href="account-management.html">Tài khoản</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!-- Branches Section -->
+        <div class="branches">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="branch-list">
+                <select>
+                    <option value="">Chọn chi nhánh</option>
+                    <option value="tp_hanoi">TP.Hà Nội</option>
+                    <option value="tp_hcm">TP.Hồ Chí Minh</option>
+                    <option value="tp_danang">TP.Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="adrees-list">
+                <select>
+                    <option value="">Cơ sở</option>
+                    <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+                    <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+                    <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+                    <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="dashboard-list">
+            <!-- Thống kê số liệu -->
+            <div class="statistics">
+                <div class="stat-item">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Cư dân</span>
+                    </div>
+                    <div class="stat-value" id="total-customers">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-door-closed"></i>
+                        <span>Tổng số phòng</span>
+                    </div>
+                    <div class="stat-value" id="total-rooms">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-bed"></i>
+                        <span>Phòng đang thuê</span>
+                    </div>
+                    <div class="stat-value" id="occupied-rooms">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-home"></i>
+                        <span>Phòng trống</span>
+                    </div>
+                    <div class="stat-value" id="empty-rooms">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-coins"></i>
+                        <span>Doanh thu tháng</span>
+                    </div>
+                    <div class="stat-value" id="monthly-revenue">0 VND</div>
+                </div>
+            </div>
+            <!-- Charts Section -->
+            <div class="chart-container">
+                <div class="charts">
+                    <!-- Biểu đồ doanh thu -->
+                    <div class="chart">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <!-- Biểu đồ số lượng khách hàng -->
+                    <div class="chart">
+                        <canvas id="customerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

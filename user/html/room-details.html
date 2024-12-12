@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/room-details.css">
+    <script src="../js/room-details.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!-- kiểu chữ -->
+    <title>Hoàng Gia Home</title>
+</head>
+
+<body>
+    <!-- Thanh menu -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../images/logo1.png" class="logo-img" alt="Logo">
+        </div>
+
+        <!-- Danh sách menu -->
+        <ul class="menu">
+            <li><a href="home.html" id="home">Trang Chủ</a></li>
+            <li><a href="room-details.html" id="chitietphong">Chi Tiết Phòng</a></li>
+        </ul>
+
+    </nav>
+
+
+    <div class="room-details-container">
+        <!-- Chi Tiết Phòng 101 -->
+        <div class="room-detail" data-room="101">
+            <!-- Phòng Hình ảnh -->
+            <div class="image-gallery-container">
+                <button class="scroll-button left" onclick="scrollGallery(-300)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="image-gallery">
+                    <img src="../../images/atm1.jpg" alt="Phòng 101 - Hình ảnh 1" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                </div>
+                <button class="scroll-button right" onclick="scrollGallery(300)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Chi tiết phòng -->
+            <div class="room-info">
+                <h2>Phòng 101</h2>
+                <p class="room-price"><i class="fas fa-dollar-sign"></i> 3.000.000 VNĐ / tháng</p>
+                <p class="room-location"><i class="fas fa-map-marker-alt"></i> Địa chỉ: 322 Mỹ Đình, Hà Nội</p>
+                <!-- Tùy chọn đặt phòng -->
+                <div class="booking">
+                    <a href="booking.html" class="book-now">
+                        <button>Đặt phòng ngay</button>
+                    </a>
+                </div>
+                <h4>Thông tin mô tả</h4>
+                <p class="room-description">
+                    Hoàng Gia Home 322 Mỹ Đình, Hà Nội tưng bừng khai trương với thiết kế tối giản và được trang bị đẩy
+                    đủ tiện
+                    nghi chờ các cư dân
+                    yêu thương về ở. <br><br> Vị trí toà nhà khu liền kề cuối ngõ 322 Mỹ đình, xung quanh có khu sân
+                    chơi chung, chung cư,
+                    văn phòng, hàng quán, tiện ích không thiếu gì. <br> Nhà lô góc, xây mới tinh & đc trang bị đầy đủ
+                    PCCC theo tiêu chuẩn:
+                    Đặc biệt là hệ thống thang thoát hiểm được thiết kế riêng biệt có thể đi bộ từ tầng cao nhất xuống +
+                    hệ thống chữa cháy
+                    tự động, báo cháy báo khói. Toà nhà có hầm để rất rộng, thoáng. Tầng thượng có sân vườn, bàn trà
+                    city view. <br> Thiết kế mỗi tầng có 7
+                    phòng khoảng 30m² sử dụng gồm 20 - 25m² sàn + 5m² gác xép, các phòng được đều thoáng, có ánh sáng tự
+                    nhiên. Thiết kế phòng được Comi
+                    Homes thiết kế với phong các tối giản hướng tới sự hiện đại và đầy đủ công năng - tiện nghi cho cư
+                    dân an tâm về ở. <br>
+                    Nội thất trong phòng được trang bị đầy đủ nội thất: Giường tủ, sofa, bàn trà, tủ lạnh, bếp từ... Khu
+                    vực chung có 10 máy giặt sấy chung để
+                    cư dân trong toà nhà tha hồ sử dụng.
+                </p>
+
+
+
+
+                <!-- Tiện nghi -->
+                <div class="amenities">
+                    <!-- Bảng chi tiết phòng -->
+                    <h3>Tiện nghi</h3>
+                    <table class="room-details-table">
+                        <tr>
+                            <th>Tên phòng</th>
+                            <td>101</td>
+                        </tr>
+                        <tr>
+                            <th>Địa chỉ</th>
+                            <td>322 Mỹ Đình, Hà Nội</td>
+                        </tr>
+                        <tr>
+                            <th>Diện tích</th>
+                            <td>30m²</td>
+                        </tr>
+                        <tr>
+                            <th>Mức giá</th>
+                            <td>3.000.000 VNĐ / tháng</td>
+                        </tr>
+                        <tr>
+                            <th>Hướng nhà</th>
+                            <td>Hướng Bắc</td>
+                        </tr>
+                        <tr>
+                            <th>Số phòng ngủ</th>
+                            <td>1 phòng</td>
+                        </tr>
+                        <tr>
+                            <th>Số người tối đa</th>
+                            <td>4 người</td>
+                        </tr>
+                        <tr>
+                            <th>Loại phòng</th>
+                            <td>Khép kín</td>
+                        </tr>
+                        <tr>
+                            <th>Nội thất</th>
+                            <td>Giường, tủ, bàn làm việc, điều hòa, nóng lạnh, kệ bếp</td>
+                        </tr>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <td>Internet, gửi xe, máy giặt, bảo trì thiết bị ...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Chi Tiết Phòng 102 -->
+        <div class="room-detail" data-room="102">
+            <!-- Phòng Hình ảnh -->
+            <div class="image-gallery-container">
+                <button class="scroll-button left" onclick="scrollGallery(-300)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="image-gallery">
+                    <img src="../../images/atm1.jpg" alt="Phòng 101 - Hình ảnh 1" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                </div>
+                <button class="scroll-button right" onclick="scrollGallery(300)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Chi tiết phòng -->
+            <div class="room-info">
+                <h2>Phòng 102</h2>
+                <p class="room-price"><i class="fas fa-dollar-sign"></i> 2.000.000 VNĐ / tháng</p>
+                <p class="room-location"><i class="fas fa-map-marker-alt"></i> Địa chỉ: 112, TP. Hồ Chí Minh</p>
+                <!-- Tùy chọn đặt phòng -->
+                <div class="booking">
+                    <a href="booking.html" class="book-now">
+                        <button>Đặt phòng ngay</button>
+                    </a>
+                </div>
+                <h4>Thông tin mô tả</h4>
+                <p class="room-description">
+                    Hoàng Gia Home 112, TP. Hồ Chí Minh tưng bừng khai trương với thiết kế tối giản và được trang bị đẩy
+                    đủ tiện
+                    nghi chờ các cư dân
+                    yêu thương về ở. <br><br> Vị trí toà nhà khu liền kề cuối ngõ 322 Mỹ đình, xung quanh có khu sân
+                    chơi chung, chung cư,
+                    văn phòng, hàng quán, tiện ích không thiếu gì. <br> Nhà lô góc, xây mới tinh & đc trang bị đầy đủ
+                    PCCC theo tiêu chuẩn:
+                    Đặc biệt là hệ thống thang thoát hiểm được thiết kế riêng biệt có thể đi bộ từ tầng cao nhất xuống +
+                    hệ thống chữa cháy
+                    tự động, báo cháy báo khói. Toà nhà có hầm để rất rộng, thoáng. Tầng thượng có sân vườn, bàn trà
+                    city view. <br> Thiết kế mỗi tầng có 7
+                    phòng khoảng 30m² sử dụng gồm 20 - 25m² sàn + 5m² gác xép, các phòng được đều thoáng, có ánh sáng tự
+                    nhiên. Thiết kế phòng được Comi
+                    Homes thiết kế với phong các tối giản hướng tới sự hiện đại và đầy đủ công năng - tiện nghi cho cư
+                    dân an tâm về ở. <br>
+                    Nội thất trong phòng được trang bị đầy đủ nội thất: Giường tủ, sofa, bàn trà, tủ lạnh, bếp từ... Khu
+                    vực chung có 10 máy giặt sấy chung để
+                    cư dân trong toà nhà tha hồ sử dụng.
+                </p>
+                <!-- Tiện nghi -->
+                <div class="amenities">
+                    <!-- Bảng chi tiết phòng -->
+                    <h3>Tiện nghi</h3>
+                    <table class="room-details-table">
+                        <tr>
+                            <th>Tên phòng</th>
+                            <td>102</td>
+                        </tr>
+                        <tr>
+                            <th>Địa chỉ</th>
+                            <td>112, TP. Hồ Chí Minh</td>
+                        </tr>
+                        <tr>
+                            <th>Diện tích</th>
+                            <td>30m²</td>
+                        </tr>
+                        <tr>
+                            <th>Mức giá</th>
+                            <td>2.000.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <th>Hướng nhà</th>
+                            <td>Hướng Bắc</td>
+                        </tr>
+                        <tr>
+                            <th>Số phòng ngủ</th>
+                            <td>1 phòng</td>
+                        </tr>
+                        <tr>
+                            <th>Số người tối đa</th>
+                            <td>4 người</td>
+                        </tr>
+                        <tr>
+                            <th>Loại phòng</th>
+                            <td>Khép kín</td>
+                        </tr>
+                        <tr>
+                            <th>Nội thất</th>
+                            <td>Giường, tủ, bàn làm việc, điều hòa, nóng lạnh, kệ bếp</td>
+                        </tr>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <td>Internet, gửi xe, máy giặt, bảo trì thiết bị ...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Chi Tiết Phòng 102 -->
+        <div class="room-detail" data-room="103">
+            <!-- Phòng Hình ảnh -->
+            <div class="image-gallery-container">
+                <button class="scroll-button left" onclick="scrollGallery(-300)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="image-gallery">
+                    <img src="../../images/atm1.jpg" alt="Phòng 101 - Hình ảnh 1" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                    <img src="../../images/atm2.jpg" alt="Phòng 101 - Hình ảnh 2" class="gallery-image">
+                </div>
+                <button class="scroll-button right" onclick="scrollGallery(300)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Chi tiết phòng -->
+            <div class="room-info">
+                <h2>Phòng 103</h2>
+                <p class="room-price"><i class="fas fa-dollar-sign"></i> 2.000.000 VNĐ / tháng</p>
+                <p class="room-location"><i class="fas fa-map-marker-alt"></i> Địa chỉ: 112, TP. Hồ Chí Minh</p>
+                <!-- Tùy chọn đặt phòng -->
+                <div class="booking">
+                    <a href="booking.html" class="book-now">
+                        <button>Đặt phòng ngay</button>
+                    </a>
+                </div>
+                <h4>Thông tin mô tả</h4>
+                <p class="room-description">
+                    Hoàng Gia Home 112, TP. Hồ Chí Minh tưng bừng khai trương với thiết kế tối giản và được trang bị đẩy
+                    đủ tiện
+                    nghi chờ các cư dân
+                    yêu thương về ở. <br><br> Vị trí toà nhà khu liền kề cuối ngõ 322 Mỹ đình, xung quanh có khu sân
+                    chơi chung, chung cư,
+                    văn phòng, hàng quán, tiện ích không thiếu gì. <br> Nhà lô góc, xây mới tinh & đc trang bị đầy đủ
+                    PCCC theo tiêu chuẩn:
+                    Đặc biệt là hệ thống thang thoát hiểm được thiết kế riêng biệt có thể đi bộ từ tầng cao nhất xuống +
+                    hệ thống chữa cháy
+                    tự động, báo cháy báo khói. Toà nhà có hầm để rất rộng, thoáng. Tầng thượng có sân vườn, bàn trà
+                    city view. <br> Thiết kế mỗi tầng có 7
+                    phòng khoảng 30m² sử dụng gồm 20 - 25m² sàn + 5m² gác xép, các phòng được đều thoáng, có ánh sáng tự
+                    nhiên. Thiết kế phòng được Comi
+                    Homes thiết kế với phong các tối giản hướng tới sự hiện đại và đầy đủ công năng - tiện nghi cho cư
+                    dân an tâm về ở. <br>
+                    Nội thất trong phòng được trang bị đầy đủ nội thất: Giường tủ, sofa, bàn trà, tủ lạnh, bếp từ... Khu
+                    vực chung có 10 máy giặt sấy chung để
+                    cư dân trong toà nhà tha hồ sử dụng.
+                </p>
+                <!-- Tiện nghi -->
+                <div class="amenities">
+                    <!-- Bảng chi tiết phòng -->
+                    <h3>Tiện nghi</h3>
+                    <table class="room-details-table">
+                        <tr>
+                            <th>Tên phòng</th>
+                            <td>103</td>
+                        </tr>
+                        <tr>
+                            <th>Địa chỉ</th>
+                            <td>112, TP. Hồ Chí Minh</td>
+                        </tr>
+                        <tr>
+                            <th>Diện tích</th>
+                            <td>30m²</td>
+                        </tr>
+                        <tr>
+                            <th>Mức giá</th>
+                            <td>2.000.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <th>Hướng nhà</th>
+                            <td>Hướng Bắc</td>
+                        </tr>
+                        <tr>
+                            <th>Số phòng ngủ</th>
+                            <td>1 phòng</td>
+                        </tr>
+                        <tr>
+                            <th>Số người tối đa</th>
+                            <td>4 người</td>
+                        </tr>
+                        <tr>
+                            <th>Loại phòng</th>
+                            <td>Khép kín</td>
+                        </tr>
+                        <tr>
+                            <th>Nội thất</th>
+                            <td>Giường, tủ, bàn làm việc, điều hòa, nóng lạnh, kệ bếp</td>
+                        </tr>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <td>Internet, gửi xe, máy giặt, bảo trì thiết bị ...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Các chi nhánh của Hoàng Gia Home -->
+    <div class="branches">
+        <h2 class="branches-title">Các chi nhánh của Hoàng Gia Home</h2>
+        <div class="branch-list">
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 322, Đường Mỹ Đình, Hà Nội</p>
+                <p class="branch-phone">Tel: 0123 456 789</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Hà Nội</strong>
+                <p class="branch-address">Số 456, Đường Y, Hà Nội</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh TP.HCM</strong>
+                <p class="branch-address">Số 456, Đường Y, TP.HCM</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+            <div class="branch-item">
+                <strong class="branch-name">Chi nhánh Đà Nẵng</strong>
+                <p class="branch-address">Số 456, Đường Y, Đà Nẵng</p>
+                <p class="branch-phone">Tel: 0987 654 321</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Tiêu đề chính -->
+        <h1 class="footer-title">Hoàng Gia Home - Chạm đến chất lượng, sống an lành</h1>
+
+        <!-- Nội dung footer -->
+        <div class="footer-content">
+            <!-- Phần giới thiệu -->
+            <div class="footer-introduction">
+                <h2>
+                    <span class="highlight-green">Về Chúng Tôi ?</span>
+                </h2>
+                <p>Hoàng Gia Home luôn tự hào là nơi mang đến cho bạn những phòng trọ tiện nghi và hiện đại với mức
+                    giá
+                    hợp
+                    lý. Chúng tôi luôn cam kết đặt chất lượng lên hàng đầu, đảm bảo mang lại sự hài lòng tối đa cho
+                    khách hàng. Hãy đến với Hoàng Gia Home để trải nghiệm không gian sống an lành, tiện nghi, và an
+                    toàn. Chúng tôi luôn nỗ lực vì sự thoải mái và hạnh phúc của bạn.</p>
+            </div>
+
+            <!-- Thông tin liên hệ -->
+            <div class="footer-contact">
+                <p><strong>Trụ sở chính:</strong> 322 Mỹ Đình, Hà Nội</p>
+                <p><strong>Điện thoại:</strong> +84 123 456 789</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@hoanggiahome.com">hoanggiahome.hn@gmail.com</a>
+                </p>
+
+                <!-- Theo dõi trên mạng xã hội -->
+                <h3>Theo Dõi Trên Mạng Xã Hội</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://zalo.me" target="_blank"><i class="fas fa-comments"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+</html>

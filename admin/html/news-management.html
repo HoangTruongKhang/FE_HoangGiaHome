@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/news-management.css">
+    <script src="../js/news-management.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="admin-dashboard">
+        <div class="logo">
+            <p class="welcome-text">Welcome</p>
+            <span class="logo-text">Hoàng Gia Home</span>
+        </div>
+        <div class="greeting">
+            <p>Xin chào, <span id="username">Admin</span></p>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="dashboard-management.html">Dashboard</a></li>
+                <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+                <li><a href="room-management.html">Quản lý phòng</a></li>
+                <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+                <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+                <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+                <li><a href="news-management.html">Quản lý tin tức</a></li>
+                <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+                <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+                <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+                <li><a href="account-management.html">Tài khoản</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!-- Branches Section -->
+        <div class="branches">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="branch-list">
+                <select>
+                    <option value="">Chọn chi nhánh</option>
+                    <option value="tp_hanoi">TP.Hà Nội</option>
+                    <option value="tp_hcm">TP.Hồ Chí Minh</option>
+                    <option value="tp_danang">TP.Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="adrees-list">
+                <select>
+                    <option value="">Cơ sở</option>
+                    <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+                    <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+                    <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+                    <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="search-input-container">
+                <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+                    list="search-suggestions">
+                <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+            </div>
+            <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+        </div>
+        <div class="add-news">
+            <h2>Danh Sách Tin Tức</h2>
+            <button class="add-news-button">+ Thêm tin tức</button>
+        </div>
+        <div class="add-news-modal" id="addNewsModal">
+            <div class="modal-content">
+                <h2>Thêm mới tin tức</h2>
+                <form id="addNewsForm">
+                    <div class="form-left">
+                        <label for="title">Tiêu đề</label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="image">Ảnh</label>
+                        <input type="text" id="image" name="image" required>
+
+                        <label for="description">Mô tả</label>
+                        <input type="text" id="description" name="description" required>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" class="close-button" onclick="closeModal()">Thoát</button>
+                        <button type="submit" class="save-button">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="edit-news-modal" id="editNewsModal">
+            <div class="modal-content">
+                <h2>Cập nhật tin tức</h2>
+                <form id="editNewsForm">
+                    <div class="form-left">
+                        <label for="editTitle">Tiêu đề</label>
+                        <input type="text" id="editTitle" name="title" required>
+
+                        <label for="editImage">Ảnh</label>
+                        <input type="text" id="editImage" name="image" required>
+
+                        <label for="editDescription">Mô tả</label>
+                        <input type="text" id="editDescription" name="description" required>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" class="close-button" onclick="closeEditModal()">Thoát</button>
+                        <button type="submit" class="save-button">Cập nhật</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="news-list">
+            <table class="news-table">
+                <thead>
+                    <tr>
+                        <th>Mã tin tức</th>
+                        <th>Tiêu đề</th>
+                        <th>Ảnh</th>
+                        <th>Mô tả</th>
+                        <th>Tên nhân viên</th>
+                        <th>Ngày tạo</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NT001</td>
+                        <td>Bài viết về mẹo thuê nhà hiệu quả</td>
+                        <td>
+                            <img src="../../images/tintuc1.jpg" alt="Mẹo thuê nhà" class="news-image">
+                        </td>
+                        <td>Hướng dẫn thuê nhà phù hợp với nhu cầu của bạn...</td>
+                        <td>U001</td>
+                        <td>01/11/2024</td>
+                        <td>
+                            <button class="edit-button">Sửa</button>
+                            <button class="delete-button">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NT002</td>
+                        <td>Cách bảo trì phòng trọ sau khi thuê</td>
+                        <td>
+                            <img src="../../images/tintuc2.png" alt="Bảo trì phòng trọ" class="news-image">
+                        </td>
+                        <td>Các mẹo giúp bạn duy trì không gian sống sạch sẽ...</td>
+                        <td>U002</td>
+                        <td>10/11/2024</td>
+                        <td>
+                            <button class="edit-button">Sửa</button>
+                            <button class="delete-button">Xóa</button>
+                        </td>
+                    </tr>
+                    <!-- Thêm các tin tức khác tại đây -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

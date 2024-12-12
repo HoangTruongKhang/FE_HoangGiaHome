@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/account-management.css" />
+  <link rel="stylesheet" href="../css/notification.css" />
+  <script src="../js/account-management.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <title>Admin</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+  <div class="admin-dashboard">
+    <div class="logo">
+      <p class="welcome-text">Welcome</p>
+      <span class="logo-text">Hoàng Gia Home</span>
+    </div>
+    <div class="greeting">
+      <p>Xin chào, <span id="username">Admin</span></p>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="dashboard-management.html">Dashboard</a></li>
+        <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+        <li><a href="room-management.html">Quản lý phòng</a></li>
+        <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+        <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+        <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+        <li><a href="news-management.html">Quản lý tin tức</a></li>
+        <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+        <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+        <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+        <li><a href="account-management.html">Tài khoản</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <div class="branches">
+      <i class="fa-solid fa-location-dot"></i>
+      <div class="branch-list">
+        <select>
+          <option value="">Chọn chi nhánh</option>
+          <option value="tp_hanoi">TP.Hà Nội</option>
+          <option value="tp_hcm">TP.Hồ Chí Minh</option>
+          <option value="tp_danang">TP.Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="adrees-list">
+        <select>
+          <option value="">Cơ sở</option>
+          <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+          <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+          <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+          <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="search-input-container">
+        <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
+          list="search-suggestions" />
+        <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+      </div>
+      <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+    </div>
+
+    <div class="add-account">
+      <h2>Danh Sách Tài khoản</h2>
+      <button class="add-account-button">+ Thêm tài khoản</button>
+    </div>
+
+    <div class="account-list">
+      <table class="account-table">
+        <thead>
+          <tr>
+            <th>Mã tài khoản</th>
+            <th>Chi nhánh</th>
+            <th>Tên đăng nhập</th>
+            <th>Họ và tên</th>
+            <th>Số điện thoại</th>
+            <th>Vai trò</th>
+            <th>Ngày tạo</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TK001</td>
+            <td>TP.Hà Nội</td>
+            <td>nguyenvana</td>
+            <td>Nguyễn Văn A</td>
+            <td>0123456789</td>
+            <td>Quản trị viên</td>
+            <td>01/01/2024</td>
+            <td>
+              <button class="edit-button">Sửa</button>
+              <button class="delete-button">Xóa</button>
+            </td>
+          </tr>
+          <!-- Add more accounts as needed -->
+        </tbody>
+      </table>
+    </div>
+    <!-- model thêm tài khoản -->
+    <div class="add-account-modal" id="addAccountModal">
+      <div class="modal-content">
+        <h2>Thêm mới tài khoản</h2>
+        <form id="addAccountForm">
+          <label for="user-name">Tên đăng nhập</label>
+          <input type="text" id="user-name" name="username" required />
+
+          <label for="pass-word">Password</label>
+          <input type="text" id="pass-word" name="pass-word" required />
+
+          <label for="last-name">Họ</label>
+          <input type="text" id="last-name" name="last-name" required />
+
+          <label for="first-name">Tên</label>
+          <input type="text" id="first-name" name="first-name" required />
+
+          <label for="full-name">Họ và tên</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="phone-number">Số điện thoại</label>
+          <input type="tel" id="phone-number" name="phone-number" required pattern="[0-9]{10}"
+            title="Số điện thoại phải có 10 chữ số." />
+
+          <label for="branch">Chi nhánh</label>
+          <select id="branch" name="branch" required>
+            <option value="">Chọn chi nhánh</option>
+            <option value="1">TP. Hà Nội</option>
+            <option value="2">TP. Hồ Chí Minh</option>
+            <option value="3">TP. Đà Nẵng</option>
+          </select>
+
+          <div class="modal-buttons">
+            <button type="button" class="close-button" onclick="closeModal()">
+              Thoát
+            </button>
+            <button type="submit" class="save-button">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- model cập nhật tài khoản -->
+    <div id="updateAccountModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUpdateModal()">&times;</span>
+        <h2>Cập nhật tài khoản</h2>
+        <form id="updateAccountForm">
+          <div class="form-left">
+            <label for="account_id">Mã tài khoản</label>
+            <input type="text" id="account_id" name="account_id" required readonly />
+
+            <label for="username">Tên đăng nhập</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="last-name">Họ</label>
+            <input type="text" id="last-name" name="last-name" required />
+
+            <label for="first-name">Tên</label>
+            <input type="text" id="first-name" name="first-name" required />
+          </div>
+          <div class="form-right">
+            <label for="phone-number">Số điện thoại</label>
+            <input type="text" id="phone-number" name="phone-number" />
+
+            <label for="full-name">Họ và tên</label>
+            <input type="text" id="full-name" name="full-name" required />
+
+            <label for="update-role">Vai trò</label>
+            <select id="update-role" name="role" required>
+              <option value="USER">Người dùng</option>
+              <option value="ADMIN">Quản trị viên</option>
+            </select>
+
+            <label for="update-branch">Chi nhánh</label>
+            <select id="update-branch" name="branch" required>
+              <option value="">Chọn chi nhánh</option>
+              <option value="tp_hanoi">TP. Hà Nội</option>
+              <option value="tp_hcm">TP. Hồ Chí Minh</option>
+              <option value="tp_danang">TP. Đà Nẵng</option>
+            </select>
+          </div>
+          <div class="modal-buttons">
+            <button type="button" class="close-button" onclick="closeUpdateModal()">Thoát</button>
+            <button type="submit" class="save-button">Cập nhật</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification" class="notification hidden"></div>
+</body>
+
+</html>
