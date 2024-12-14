@@ -220,13 +220,11 @@ body {
     /* Căn phải */
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
     /* Cách trên 10px */
     margin-bottom: 20px;
     /* Cách dưới 80px */
     margin-right: 50px;
     /* Cách phải 50px */
-    padding: 10px;
     border-radius: 8px;
 }
 
