@@ -13,7 +13,7 @@ menuLinks.forEach((link) => {
   }
 });
 
-const API_BASE_URL = "https://86f0-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d84e-117-5-34-35.ngrok-free.app/api/v1";
 function showNotification(message, type = "success") {
   const notification = document.getElementById("notification");
   notification.textContent = message;
@@ -139,7 +139,9 @@ async function addNewData(event) {
   }
 }
 
-document.getElementById("addServiceForm").addEventListener("submit", addNewData);
+document
+  .getElementById("addServiceForm")
+  .addEventListener("submit", addNewData);
 
 /// Update data
 async function getDataById(id) {

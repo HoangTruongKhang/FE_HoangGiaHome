@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://86f0-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d84e-117-5-34-35.ngrok-free.app/api/v1";
 
 // Hiển thị thông báo
 function showNotification(message, type = "success") {
@@ -75,8 +75,9 @@ function updateAccountTable(accounts) {
       <td>${new Date(account.create_at).toLocaleDateString()}</td>
       <td>
         <button class="edit-button" data-id="${account.account_id}">Sửa</button>
-        <button class="delete-button" data-id="${account.account_id
-      }">Xóa</button>
+        <button class="delete-button" data-id="${
+          account.account_id
+        }">Xóa</button>
       </td>
     `;
     tableBody.appendChild(row);

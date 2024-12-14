@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://86f0-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d84e-117-5-34-35.ngrok-free.app/api/v1";
 // Lấy tên trang hiện tại từ URL
 
 function showNotification(message, type = "success") {
@@ -229,13 +229,14 @@ async function getCustomerById(accountId) {
 }
 async function openUpdateModal(customerId) {
   const customer = await getCustomerById(customerId);
-  console.log(  );
-  
+  console.log();
+
   if (customer) {
     document.getElementById("update-customer_id").value = customer.customer_id;
     document.getElementById("update-full_name").value = customer.full_name;
     document.getElementById("update-cmnd").value = customer.cmnd;
-    document.getElementById("update-phone_number").value = customer.phone_number;
+    document.getElementById("update-phone_number").value =
+      customer.phone_number;
     document.getElementById("update-email").value = customer.email;
     document.getElementById("update-birth_date").value = customer.birth_date;
     document.getElementById("update-address").value = customer.address;
@@ -249,8 +250,8 @@ async function openUpdateModal(customerId) {
 
 async function updateCustomer(event) {
   event.preventDefault();
-console.log();
-const customerId = document.getElementById("update-customer_id").value;
+  console.log();
+  const customerId = document.getElementById("update-customer_id").value;
   const updatedCustomerData = {
     full_name: document.getElementById("update-full_name").value,
     cmnd: document.getElementById("update-cmnd").value,
