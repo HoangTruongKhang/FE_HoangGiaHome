@@ -1,175 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/booking-management.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/booking-management.css" />
+    <link rel="stylesheet" href="../css/booking-details-management.css" />
     <script src="../js/booking-management.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <title>Admin</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="admin-dashboard">
-        <div class="logo">
-            <p class="welcome-text">Welcome</p>
-            <span class="logo-text">Hoàng Gia Home</span>
-        </div>
-        <div class="greeting">
-            <p>Xin chào, <span id="username">Admin</span></p>
-        </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="dashboard-management.html">Dashboard</a></li>
-                <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
-                <li><a href="room-management.html">Quản lý phòng</a></li>
-                <li><a href="service-management.html">Quản lý dịch vụ</a></li>
-                <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
-                <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
-                <li><a href="news-management.html">Quản lý tin tức</a></li>
-                <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
-                <li><a href="reply-management.html">Quản lý Trả lời</a></li>
-                <li><a href="customer-management.html">Quản lý khách hàng</a></li>
-                <li><a href="account-management.html">Tài khoản</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <p class="welcome-text">Welcome</p>
+        <span class="logo-text">Hoàng Gia Home</span>
+      </div>
+      <div class="greeting">
+        <p>Xin chào, <span id="username">Admin</span></p>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="dashboard-management.html">Dashboard</a></li>
+          <li><a href="branches-management.html">Quản lý chi nhánh</a></li>
+          <li><a href="room-management.html">Quản lý phòng</a></li>
+          <li><a href="service-management.html">Quản lý dịch vụ</a></li>
+          <li><a href="contract-management.html">Quản lý hợp đồng</a></li>
+          <li><a href="invoices-management.html">Quản lý hóa đơn</a></li>
+          <li><a href="news-management.html">Quản lý tin tức</a></li>
+          <li><a href="feedback-management.html">Quản lý phản hồi</a></li>
+          <li><a href="reply-management.html">Quản lý Trả lời</a></li>
+          <li><a href="customer-management.html">Quản lý khách hàng</a></li>
+          <li><a href="account-management.html">Tài khoản</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div class="content">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <select>
+          <option value="">Trạng thái phòng</option>
+          <option value="available">Còn trống</option>
+          <option value="occupied">Đã thuê</option>
+        </select>
+        <select>
+          <option value="">Trạng thái giá</option>
+          <option value="below2mil">Dưới 2 triệu</option>
+          <option value="2to4mil">2 đến 4 triệu</option>
+          <option value="4to8mil">4 đến 8 triệu</option>
+          <option value="above8mil">Trên 8 triệu</option>
+        </select>
+        <div class="search-input-container">
+          <input
+            type="text"
+            id="search-id"
+            placeholder="Tìm kiếm..."
+            required
+            class="search-input"
+            list="search-suggestions"
+          />
+          <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+        </div>
+        <button class="search-button" onclick="searchFunction()">
+          Tìm Kiếm
+        </button>
+      </div>
 
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <select>
-                <option value="">Trạng thái phòng</option>
-                <option value="available">Còn trống</option>
-                <option value="occupied">Đã thuê</option>
-            </select>
-            <select>
-                <option value="">Trạng thái giá</option>
-                <option value="below2mil">Dưới 2 triệu</option>
-                <option value="2to4mil">2 đến 4 triệu</option>
-                <option value="4to8mil">4 đến 8 triệu</option>
-                <option value="above8mil">Trên 8 triệu</option>
-            </select>
-            <div class="search-input-container">
-                <input type="text" id="search-id" placeholder="Tìm kiếm..." required class="search-input"
-                    list="search-suggestions">
-                <span class="clear-icon" onclick="clearSearch()">&#x2715;</span>
+      <!-- Branches Section -->
+      <div class="branches">
+        <div class="branch-list">
+          <select>
+            <option value="">Chọn chi nhánh</option>
+            <option value="tp_hanoi">TP.Hà Nội</option>
+            <option value="tp_hcm">TP.Hồ Chí Minh</option>
+            <option value="tp_danang">TP.Đà Nẵng</option>
+          </select>
+        </div>
+        <div class="adrees-list">
+          <select>
+            <option value="">Cơ sở</option>
+            <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
+            <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
+            <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
+            <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="menu-room">
+        <ul>
+          <li><a href="room-management.html">Danh sách phòng</a></li>
+          <li><span class="divider">|</span></li>
+          <li>
+            <a href="booking-management.html">Danh sách khách đặt phòng</a>
+          </li>
+        </ul>
+      </div>
+      <div class="add-room-modal1" id="addRoomModal1">
+        <div class="modal-content">
+          <div class="details-container">
+            <h4>Chi Tiết Khách hàng đặt phòng</h4>
+            <table class="details-table"></table>
+            <div class="modal-buttons">
+              <a onclick="closeModal1()" class="close-button">Thoát</a>
+              <a href="#" class="confirm-button">Xác nhận</a>
+              <a href="#" class="reject-button">Từ chối</a>
             </div>
-            <button class="search-button" onclick="searchFunction()">Tìm Kiếm</button>
+          </div>
         </div>
-
-        <!-- Branches Section -->
-        <div class="branches">
-            <div class="branch-list">
-
-                <select>
-                    <option value="">Chọn chi nhánh</option>
-                    <option value="tp_hanoi">TP.Hà Nội</option>
-                    <option value="tp_hcm">TP.Hồ Chí Minh</option>
-                    <option value="tp_danang">TP.Đà Nẵng</option>
-                </select>
-            </div>
-            <div class="adrees-list">
-                <select>
-                    <option value="">Cơ sở</option>
-                    <option value="322_mydinh">Số 322, Đường Mỹ Đình, Hà Nội</option>
-                    <option value="456_y_hanoi">Số 456, Đường Y, Hà Nội</option>
-                    <option value="456_y_hcm">Số 456, Đường Y, TP.HCM</option>
-                    <option value="456_y_danang">Số 456, Đường Y, Đà Nẵng</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="menu-room">
-            <ul>
-                <li><a href="room-management.html">Danh sách phòng</a></li>
-                <li><span class="divider">|</span></li>
-                <li><a href="booking-management.html">Danh sách khách đặt phòng</a></li>
-            </ul>
-        </div>
-
-        <div class="add-room">
-            <button class="add-room-button" onclick="showAddRoomModal11()">+ Thêm phòng</button>
-
-        </div>
-
-
-
-        <div class="booking-list">
-
-            <table class="booking-table">
-                <thead>
-                    <tr>
-                        <th>Mã đặt phòng</th>
-                        <th>Tên khách hàng</th>
-                        <th>Số điện thoại</th>
-                        <th>Phòng</th>
-                        <th>Thời hạn gian thuê</th>
-                        <th>Hình thức thanh toán</th>
-                        <th>Ngày tạo</th>
-                        <th>Xem chi tiết</th>
-
-
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>DP001</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>0123456789</td>
-                        <td>Phòng 101</td>
-                        <td>12 tháng</td>
-                        <td>Thanh toán online</td>
-                        <td>01/01/2024</td>
-                        <td><a href="booking-details-management.html" class="detail-link">Xem chi tiết</a></td>
-                    </tr>
-                    <tr>
-                        <td>DP001</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>0123456789</td>
-                        <td>Phòng 101</td>
-                        <td>12 tháng</td>
-                        <td>Thanh toán online</td>
-                        <td>01/01/2024</td>
-                        <td><a href="booking-details-management.html" class="detail-link">Xem chi tiết</a></td>
-                    </tr>
-                    <tr>
-                        <td>DP001</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>0123456789</td>
-                        <td>Phòng 101</td>
-                        <td>12 tháng</td>
-                        <td>Thanh toán online</td>
-                        <td>01/01/2024</td>
-                        <td><a href="booking-details-management.html" class="detail-link">Xem chi tiết</a></td>
-                    </tr>
-                    <tr>
-                        <td>DP001</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>0123456789</td>
-                        <td>Phòng 101</td>
-                        <td>12 tháng</td>
-                        <td>Thanh toán online</td>
-                        <td>01/01/2024</td>
-                        <td><a href="booking-details-management.html" class="detail-link">Xem chi tiết</a></td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-        </div>
-
-
+      </div>
+      <div class="booking-list">
+        <table class="booking-table">
+          <thead>
+            <tr>
+              <th>Mã đặt phòng</th>
+              <th>Tên khách hàng</th>
+              <th>Số điện thoại</th>
+              <th>Phòng</th>
+              <th>Thời hạn gian thuê</th>
+              <th>Hình thức thanh toán</th>
+              <th>Ngày tạo</th>
+              <th>Xem chi tiết</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-</body>
+  </body>
 
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </html>

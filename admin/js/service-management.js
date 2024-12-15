@@ -34,12 +34,19 @@ function updateTable(data) {
   data.forEach((item) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-          <td>${item.branch_id}</td>
-          <td>${item.branch_name}</td>
-          <td>${item.address}</td>
+          <td>${item.service_id}</td>
+          <td>${item.serviceName}</td>
+          <td>${item.price}</td>
+             <td>${item.quantity}</td>
+          <td>${item.unit}</td>
+          <td>${new Date(item.createDate).toLocaleDateString("en-GB")}</td>
           <td>
-               <button class="edit-button" data-id="${item.branch_id}">Sửa</button>
-          <button class="delete-button" data-id="${item.branch_id}">Xóa</button>
+               <button class="edit-button" data-id="${
+                 item.service_id
+               }">Sửa</button>
+          <button class="delete-button" data-id="${
+            item.service_id
+          }">Xóa</button>
           </td>
         `;
     tableBody.appendChild(row);
@@ -47,7 +54,7 @@ function updateTable(data) {
   attachRowActions();
 }
 
-document.querySelector(".add-service-button").addEventListener("click", () => {
+document.querySelector(".add-service-button1").addEventListener("click", () => {
   document.getElementById("addServiceModal").style.display = "flex";
 });
 
@@ -56,10 +63,6 @@ function clearForm() {
   form.reset();
 }
 function closeModal() {
-  document.getElementById("addServiceModal").style.display = "none";
-  clearForm();
-}
-function closeBranchModal() {
   document.getElementById("addServiceModal").style.display = "none";
   clearForm();
 }
@@ -90,7 +93,7 @@ async function fetchDataTable(search = "") {
     : `${API_BASE_URL}/services`; // Nếu không tìm kiếm, lấy tất cả khách hàng
 
   const data = await fetchData(url);
-  updateTable(data || []); // Cập nhật bảng khách hàng
+  updateTable(data.content || []); // Cập nhật bảng khách hàng
 }
 
 async function searchFunction() {
@@ -107,12 +110,15 @@ async function addNewData(event) {
   event.preventDefault();
   console.log(event);
 
-  const branch_name = document.getElementById("branch_name").value;
-  const address = document.getElementById("address").value; // Assuming there's an input field for CMND
-
+  const serviceName = document.getElementById("serviceName").value;
+  const price = document.getElementById("price").value;
+  const quantity = document.getElementById("quantity").value;
+  const unit = document.getElementById("unit").value;
   const newData = {
-    branch_name,
-    address,
+    serviceName,
+    price,
+    quantity,
+    unit,
   };
   console.log(newData);
 
@@ -166,12 +172,14 @@ async function getDataById(id) {
 async function openUpdateModal(id) {
   const data = await getDataById(id);
   if (data) {
-    document.getElementById("update_branch_id").value = data.branch_id;
-    document.getElementById("update_branch_name").value = data.branch_name;
-    document.getElementById("uppate_address").value = data.address;
+    document.getElementById("update-id").value = data.service_id;
+    document.getElementById("update-serviceName").value = data.serviceName;
+    document.getElementById("update-price").value = data.price;
+    document.getElementById("update-quantity").value = data.quantity;
+    document.getElementById("update-unit").value = data.unit;
 
     // Hiển thị modal
-    document.getElementById("updateServiceModal").style.display = "block";
+    document.getElementById("updateServiceModal").style.display = "flex";
   }
 }
 
@@ -217,10 +225,16 @@ function attachRowActions() {
 
 async function updateData(event) {
   event.preventDefault();
-  const id = document.getElementById("update_branch_id").value;
-  const updatedCustomerData = {
-    branch_name: document.getElementById("update_branch_name").value,
-    address: document.getElementById("uppate_address").value,
+  const id = document.getElementById("update-id").value;
+  const serviceName = document.getElementById("update-serviceName").value;
+  const price = document.getElementById("update-price").value;
+  const quantity = document.getElementById("update-quantity").value;
+  const unit = document.getElementById("update-unit").value;
+  const updateData = {
+    serviceName,
+    price,
+    quantity,
+    unit,
   };
 
   try {
@@ -230,7 +244,7 @@ async function updateData(event) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(updatedCustomerData),
+      body: JSON.stringify(updateData),
     });
 
     if (!response.ok) {
@@ -247,5 +261,5 @@ async function updateData(event) {
 }
 
 document
-  .getElementById("updateBranchForm")
+  .getElementById("updateSeviceForm")
   .addEventListener("submit", updateData);

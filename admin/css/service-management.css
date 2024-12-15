@@ -268,7 +268,6 @@ body {
 
 /* Nút tìm kiếm */
 .add-service1 {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     /* Căn phải */
@@ -278,7 +277,6 @@ body {
     /* Cách trên 10px */
     margin-bottom: 20px;
     /* Cách dưới 80px */
-    margin-right: 50px;
     /* Cách phải 50px */
     padding: 10px;
     border-radius: 8px;
@@ -289,7 +287,6 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-right: 100px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 14px;
@@ -310,8 +307,6 @@ h2 {
     /* Cho phép cuộn xuống khi không đủ không gian */
     justify-content: flex-start;
     /* Canh đều các phòng trong hàng */
-    margin: 20px;
-    gap: 20px;
     /* Cho phép cuộn ngang nếu quá nhiều phòng */
     max-height: 90%;
     /* Đặt chiều cao tối đa cho danh sách phòng */

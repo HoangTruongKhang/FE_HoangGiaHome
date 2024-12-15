@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/service-management.css" />
+    <link rel="stylesheet" href="../css/notification.css" />
     <script src="../js/service-management.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
@@ -79,12 +80,12 @@
                 <li><a href="vehicle-management.html">Danh sách phương tiện</a></li>
             </ul>
         </div>
-
-        <div class="add-service1">
-            <button class="add-service-button1">+ Thêm dịch vụ</button>
-        </div>
-
-        <h2>Danh sách dịch vụ phòng</h2>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h2>Danh sách dịch vụ phòng</h2>
+    <div class="add-service1">
+        <button class="add-service-button1">+ Thêm dịch vụ</button>
+    </div>
+</div>
         <div class="service-list">
             <table class="service-table">
                 <thead>
@@ -99,18 +100,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>DV001</td>
-                        <td>Dịch vụ Phòng A</td>
-                        <td>1,000,000 VND</td>
-                        <td>5</td>
-                        <td>Phòng</td>
-                        <td>01/01/2024</td>
-                        <td>
-                            <button class="edit-button1" onclick="openEditModal()">Sửa</button>
-                            <button class="delete-button1" onclick="openDeleteModal()">Xóa</button>
-                        </td>
-                    </tr>
+                   
                 </tbody>
         </div>
         <div class="add-service">
@@ -131,7 +121,7 @@
                         <input type="text" id="unit" name="unit" required />
 
                         <div class="modal-buttons">
-                            <button type="button" class="close-button" onclick="closeBranchModal()">
+                            <button type="button" class="close-button" onclick="closeModal()">
                                 Đóng
                             </button>
                             <button type="submit" class="save-button">Lưu</button>
@@ -146,6 +136,8 @@
                 <div class="modal-content">
                     <h2>Cập nhật dịch vụ</h2>
                     <form id="updateSeviceForm">
+                        <label for="update-id">ID dịch vụ</label>
+                        <input type="text" id="update-id" name="update-id" disabled />
                         <label for="update-serviceName">Tên dịch vụ</label>
                         <input type="text" id="update-serviceName" name="update-serviceName" required />
 
