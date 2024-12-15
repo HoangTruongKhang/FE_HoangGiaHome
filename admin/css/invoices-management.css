@@ -262,9 +262,46 @@ h2 {
 
 }
 
+.invoices-create-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cho phép cuộn xuống khi không đủ không gian */
+    justify-content: flex-start;
+    /* Canh đều các phòng trong hàng */
+    width: 98%;
+    gap: 20px;
+    /* Cho phép cuộn ngang nếu quá nhiều phòng */
+    max-height: 90%;
+    /* Đặt chiều cao tối đa cho danh sách phòng */
+    overflow-y: auto;
+    /* Thêm thanh cuộn dọc */
+}
+.action-table-create{
+    display: flex;
+    justify-items: center;
+    gap: 5px;
+}
 
+.invoice_name-select {
+    padding: 10px 15px;
+    /* Thêm padding cho select */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Đặt chiều rộng cho select */
+    transition: border-color 0.3s;
+}
+.invoice-table-create td input {
+    padding: 10px 15px;
+    /* Thêm padding cho select */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Đặt chiều rộng cho select */
+    transition: border-color 0.3s;
+}
 /* Bảng */
-.invoice-table {
+.invoice-table   {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -272,14 +309,32 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
 }
-
-.invoice-table thead {
+.invoice-table-create {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.invoice-table thead   {
     background-color: #009205;
     color: white;
 }
-
+.invoice-table-create thead{
+    width: 30px;
+    background-color: #009205;
+    color: white;
+}
 .invoice-table th,
 .invoice-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.invoice-table-create th,
+.invoice-table-create td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
