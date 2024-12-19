@@ -151,17 +151,12 @@
               />
 
               <label for="add-quantity">Số lượng</label>
-              <select id="add-quantity" name="add-quantity" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">1</option>
-                <option value="5">2</option>
-                <option value="6">3</option>
-              </select>
-
-              <label for="create_date">Ngày tạo</label>
-              <input type="date" id="create_date" name="create_date" required />
+              <input
+                type="text"
+                id="add-quantity"
+                name="add-quantity"
+                required
+              />
             </div>
             <div class="modal-buttons">
               <button type="button" class="close-button" onclick="closeModal()">
@@ -181,37 +176,44 @@
           <h2>Cập nhật khách hàng - Dịch vụ</h2>
           <form id="updatecustomerServiceForm">
             <div class="form-left">
-              <label for="title">Mã khách hàng</label>
-              <input type="text" id="title" name="title" required />
-
-              <label for="update-full_name">Họ và tên khách hàng</label>
+              <label for="customerService_id">Mã </label>
               <input
                 type="text"
-                id="update-full_name"
-                name="update-full_name"
+                id="customerService_id"
+                name="customerService_id"
+                disabled
+              />
+              <label for="update-customerCustomer_id">Mã khách hàng</label>
+              <input
+                type="text"
+                id="update-customerCustomer_id"
+                name="update-customerCustomer_id"
                 required
               />
 
-              <label for="add-service_name">Tên dịch vụ</label>
+              <label for="update-customerFull_name">Họ và tên khách hàng</label>
               <input
                 type="text"
-                id="update-service_name"
-                name="update-service_name"
+                id="update-customerFull_name"
+                name="update-customerFull_name"
+                required
+              />
+
+              <label for="update-serviceServiceName">Tên dịch vụ</label>
+              <input
+                type="text"
+                id="update-serviceServiceName"
+                name="update-serviceServiceName"
                 required
               />
 
               <label for="update-quantity">Số lượng</label>
-              <select id="update-quantity" name="update-quantity" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">1</option>
-                <option value="5">2</option>
-                <option value="6">3</option>
-              </select>
-
-              <label for="create_date">Ngày tạo</label>
-              <input type="date" id="create_date" name="create_date" required />
+              <input
+                type="text"
+                id="update-quantity"
+                name="update-quantity"
+                required
+              />
             </div>
             <div class="modal-buttons">
               <button

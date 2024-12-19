@@ -46,7 +46,7 @@ function closeModal1() {
   document.getElementById("updatecustomerServiceModal1").style.display = "none"; // Hide modal
 }
 
-const API_BASE_URL = "https://879a-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://91ae-117-5-34-35.ngrok-free.app/api/v1";
 function showNotification(message, type = "success") {
   const notification = document.getElementById("notification");
   notification.textContent = message;
@@ -141,7 +141,7 @@ async function addNewData(event) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(newData),
+      body: JSON.stringify([newData]),
     });
 
     if (!response.ok) {
@@ -182,7 +182,20 @@ async function getDataById(id) {
 
 async function openUpdateModal(id) {
   const data = await getDataById(id);
+  console.log(data);
+
   if (data) {
+    document.getElementById("customerService_id").value =
+      data.customerService_id;
+    document.getElementById("update-customerCustomer_id").value =
+      data.customerCustomer_id;
+    document.getElementById("update-customerFull_name").value =
+      data.customerFull_name;
+    document.getElementById("customerService_id").value =
+      data.serviceService_id;
+    document.getElementById("update-serviceServiceName").value =
+      data.serviceServiceName;
+    document.getElementById("update-quantity").value = data.quantity;
     // Hiển thị modal
     document.getElementById("updatecustomerServiceModal1").style.display =
       "flex";
@@ -234,20 +247,20 @@ function attachRowActions() {
 
 async function updateData(event) {
   event.preventDefault();
-  const id = document.getElementById("update-id").value;
-  const serviceName = document.getElementById("update-serviceName").value;
-  const price = document.getElementById("update-price").value;
+  const customerCustomer_id = document.getElementById(
+    "update-customerCustomer_id"
+  ).value;
+  const serviceService_id = document.getElementById("customerService_id").value;
   const quantity = document.getElementById("update-quantity").value;
-  const unit = document.getElementById("update-unit").value;
   const updateData = {
-    serviceName,
-    price,
+    customerCustomer_id,
+    serviceService_id,
     quantity,
-    unit,
   };
+  console.log();
 
   try {
-    const response = await fetch(`${API_BASE_URL}/services/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/customerservices/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -270,5 +283,5 @@ async function updateData(event) {
 }
 
 document
-  .getElementById("updateSeviceForm")
+  .getElementById("updatecustomerServiceForm")
   .addEventListener("submit", updateData);
