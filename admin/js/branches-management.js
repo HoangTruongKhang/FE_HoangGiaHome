@@ -15,7 +15,7 @@ menuLinks.forEach((link) => {
 
 /////////////////////////////////////////////////////////////////
 
-const API_BASE_URL = "https://91ae-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
 function showNotification(message, type = "success") {
   const notification = document.getElementById("notification");
   notification.textContent = message;

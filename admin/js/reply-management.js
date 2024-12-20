@@ -13,7 +13,7 @@ menuLinks.forEach((link) => {
   }
 });
 
-const API_BASE_URL = "https://91ae-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
 async function fetchData(url) {
   const response = await fetch(url, {
     method: "GET",
