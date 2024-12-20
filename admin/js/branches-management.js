@@ -25,6 +25,34 @@ function showNotification(message, type = "success") {
   }, 3000);
 }
 
+function updateBranchSelect(data) {
+  const branchSelect = document.querySelector(".branch-list select");
+
+  // Xóa các option cũ, giữ lại option mặc định
+  branchSelect.innerHTML = '<option value="">Chọn chi nhánh</option>';
+
+  // Thêm các chi nhánh mới vào select
+  data.forEach((branch) => {
+    const option = document.createElement("option");
+    option.value = branch.branch_name;
+    option.textContent = branch.branch_name; // Nội dung hiển thị sẽ là tên chi nhánh
+    branchSelect.appendChild(option);
+  });
+}
+function updateAddressSelect(data) {
+  const addressSelect = document.querySelector(".adrees-list select");
+
+  // Xóa các option cũ, giữ lại option mặc định
+  addressSelect.innerHTML = '<option value="">Cơ sở</option>';
+
+  // Thêm các cơ sở mới vào select
+  data.forEach((address) => {
+    const option = document.createElement("option");
+    option.value = address.address; // Giá trị sẽ là ID cơ sở
+    option.textContent = address.address; // Nội dung hiển thị sẽ là tên cơ sở
+    addressSelect.appendChild(option);
+  });
+}
 function updateTable(data) {
   const tableBody = document.querySelector(".branches-table tbody");
   tableBody.innerHTML = ""; // Clear existing rows
@@ -87,11 +115,14 @@ async function fetchData(url) {
 }
 
 async function fetchDataTable(search = "") {
+  const defaultData = await fetchData(`${API_BASE_URL}/branch`);
   const url = search
     ? `${API_BASE_URL}/branch?search=${encodeURIComponent(search)}`
     : `${API_BASE_URL}/branch`; // Nếu không tìm kiếm, lấy tất cả khách hàng
 
   const data = await fetchData(url);
+  updateAddressSelect(defaultData || []);
+  updateBranchSelect(defaultData || []);
   updateTable(data || []); // Cập nhật bảng khách hàng
 }
 
@@ -249,3 +280,16 @@ async function updateData(event) {
 document
   .getElementById("updateBranchForm")
   .addEventListener("submit", updateData);
+
+document.getElementById("branch-select").addEventListener("change", (event) => {
+  const selectedBranch = event.target.value; // Lấy value của option được chọn
+  fetchDataTable(selectedBranch); // Gọi searchFunction với giá trị branch
+});
+
+// Gắn sự kiện change cho address-select
+document
+  .getElementById("address-select")
+  .addEventListener("change", (event) => {
+    const selectedAddress = event.target.value; // Lấy value của option được chọn
+    fetchDataTable(selectedAddress); // Gọi searchFunction với giá trị address
+  });
