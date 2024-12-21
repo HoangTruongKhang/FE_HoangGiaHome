@@ -82,7 +82,7 @@ function searchFunction() {
   }
 }
 
-const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d8fc-117-5-34-35.ngrok-free.app/api/v1";
 function updateTable(data) {
   const tableBody = document.querySelector(".room-list");
   tableBody.innerHTML = ""; // Clear existing rows
@@ -96,7 +96,7 @@ function updateTable(data) {
     row.innerHTML = `
           <a href="room-details.html?room=${item.room_id}">
             <div class="room-item">
-                <img src=${item.image_media_url} alt="Phòng 1" class="room-image">
+                <img src="../../images/atm1.jpg" alt="Phòng 1" class="room-image">
                 <div class="room-price">
                     <i class="fas fa-dollar-sign"></i> ${item.price} VND
                 </div>
@@ -108,7 +108,7 @@ function updateTable(data) {
                     <i class="fas fa-map-marker-alt"></i> ${item.branchBranch_name}
                 </div>
                 <div class="room-description">
-                    Phòng rộng rãi, thoáng mát, đầy đủ tiện nghi. Phù hợp cho gia đình hoặc nhóm bạn.
+                    ${item.description}
                 </div>
             </div>
         </a>

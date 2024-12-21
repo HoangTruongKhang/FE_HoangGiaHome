@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d8fc-117-5-34-35.ngrok-free.app/api/v1";
 
 // Hiển thị thông báo
 function showNotification(message, type = "success") {

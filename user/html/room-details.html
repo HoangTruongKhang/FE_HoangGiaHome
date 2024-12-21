@@ -78,9 +78,10 @@
 
         <!-- Chi tiết phòng -->
         <div class="room-info">
-          <h2>Phòng 101</h2>
+          <h2 id="room-name">Phòng 101</h2>
           <p class="room-price">
-            <i class="fas fa-dollar-sign"></i> 3.000.000 VNĐ / tháng
+            <i class="fas fa-dollar-sign"></i
+            ><span id="room-price">3.000.000</span> VNĐ / tháng
           </p>
           <p class="room-location">
             <i class="fas fa-map-marker-alt"></i> Địa chỉ: 322 Mỹ Đình, Hà Nội
@@ -92,7 +93,7 @@
             </a>
           </div>
           <h4>Thông tin mô tả</h4>
-          <p class="room-description">
+          <p id="room-description">
             Hoàng Gia Home 322 Mỹ Đình, Hà Nội tưng bừng khai trương với thiết
             kế tối giản và được trang bị đẩy đủ tiện nghi chờ các cư dân yêu
             thương về ở. <br /><br />
@@ -121,11 +122,11 @@
             <table class="room-details-table">
               <tr>
                 <th>Tên phòng</th>
-                <td>101</td>
+                <td id="room-name1">101</td>
               </tr>
               <tr>
                 <th>Địa chỉ</th>
-                <td>322 Mỹ Đình, Hà Nội</td>
+                <td id="branch-address">322 Mỹ Đình, Hà Nội</td>
               </tr>
               <tr>
                 <th>Diện tích</th>
@@ -133,31 +134,35 @@
               </tr>
               <tr>
                 <th>Mức giá</th>
-                <td>3.000.000 VNĐ / tháng</td>
+                <td><span id="room-price1"></span> VNĐ / tháng</td>
               </tr>
               <tr>
                 <th>Hướng nhà</th>
-                <td>Hướng Bắc</td>
+                <td id="direction">Hướng Bắc</td>
               </tr>
               <tr>
                 <th>Số phòng ngủ</th>
-                <td>1 phòng</td>
+                <td id="bedrooms">1 phòng</td>
               </tr>
               <tr>
                 <th>Số người tối đa</th>
-                <td>4 người</td>
+                <td id="maxPeople">4 người</td>
               </tr>
               <tr>
                 <th>Loại phòng</th>
-                <td>Khép kín</td>
+                <td id="roomType">Khép kín</td>
               </tr>
               <tr>
                 <th>Nội thất</th>
-                <td>Giường, tủ, bàn làm việc, điều hòa, nóng lạnh, kệ bếp</td>
+                <td id="furniture">
+                  Giường, tủ, bàn làm việc, điều hòa, nóng lạnh, kệ bếp
+                </td>
               </tr>
               <tr>
                 <th>Dịch vụ</th>
-                <td>Internet, gửi xe, máy giặt, bảo trì thiết bị ...</td>
+                <td id="roomServices">
+                  Internet, gửi xe, máy giặt, bảo trì thiết bị ...
+                </td>
               </tr>
             </table>
           </div>
@@ -211,7 +216,7 @@
           <h2>
             <span class="highlight-green">Về Chúng Tôi ?</span>
           </h2>
-          <p>
+          <p id="room-description">
             Hoàng Gia Home luôn tự hào là nơi mang đến cho bạn những phòng trọ
             tiện nghi và hiện đại với mức giá hợp lý. Chúng tôi luôn cam kết đặt
             chất lượng lên hàng đầu, đảm bảo mang lại sự hài lòng tối đa cho

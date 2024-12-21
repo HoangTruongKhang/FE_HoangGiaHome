@@ -46,7 +46,7 @@ function closeModal1() {
   document.getElementById("updatecustomerServiceModal1").style.display = "none"; // Hide modal
 }
 
-const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d8fc-117-5-34-35.ngrok-free.app/api/v1";
 function showNotification(message, type = "success") {
   const notification = document.getElementById("notification");
   notification.textContent = message;

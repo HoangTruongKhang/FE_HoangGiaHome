@@ -1,7 +1,7 @@
 closeLoginForm.addEventListener("click", function () {
   window.location.href = "login.html";
 });
-const API_BASE_URL = "https://1ceb-117-5-34-35.ngrok-free.app/api/v1";
+const API_BASE_URL = "https://d8fc-117-5-34-35.ngrok-free.app/api/v1";
 // Lấy các phần tử cần thiết
 const form = document.getElementById("form-login");
 const usernameInput = document.querySelector(
